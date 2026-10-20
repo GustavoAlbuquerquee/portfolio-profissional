@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="GET /api/v1/livros — 200 OK">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e1322"/><stop offset="1" stop-color="#151b2c"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="38" fill="#070a13"/>
+  <circle cx="22" cy="19" r="5" fill="#ef4444"/><circle cx="40" cy="19" r="5" fill="#f59e0b"/><circle cx="58" cy="19" r="5" fill="#22c55e"/>
+  <rect x="80" y="10" width="700" height="18" rx="9" fill="#151b2c"/>
+  <text x="94" y="23" font-family="ui-monospace,monospace" font-size="10" fill="#6b7694">GET /api/v1/livros — 200 OK</text>
+  
+    <rect x="28" y="56" width="340" height="416" rx="12" fill="#0b1020" stroke="#222b44"/>
+    <text x="44" y="80" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#e8ecf7">Endpoints</text>
+    <rect x="44" y="94" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="102" width="56" height="18" rx="5" fill="#10b981" opacity="0.18"/><text x="60" y="115" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#10b981">GET</text><text x="120" y="115" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/livros</text>
+    <rect x="44" y="138" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="146" width="56" height="18" rx="5" fill="#6366f1" opacity="0.18"/><text x="60" y="159" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#6366f1">POST</text><text x="120" y="159" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/livros</text>
+    <rect x="44" y="182" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="190" width="56" height="18" rx="5" fill="#10b981" opacity="0.18"/><text x="60" y="203" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#10b981">GET</text><text x="120" y="203" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/livros/:id</text>
+    <rect x="44" y="226" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="234" width="56" height="18" rx="5" fill="#f59e0b" opacity="0.18"/><text x="60" y="247" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#f59e0b">PUT</text><text x="120" y="247" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/livros/:id</text>
+    <rect x="44" y="270" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="278" width="56" height="18" rx="5" fill="#ef4444" opacity="0.18"/><text x="60" y="291" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#ef4444">DELETE</text><text x="120" y="291" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/livros/:id</text>
+    <rect x="44" y="314" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="322" width="56" height="18" rx="5" fill="#6366f1" opacity="0.18"/><text x="60" y="335" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#6366f1">POST</text><text x="120" y="335" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/auth/login</text>
+    <rect x="44" y="358" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="366" width="56" height="18" rx="5" fill="#10b981" opacity="0.18"/><text x="60" y="379" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#10b981">GET</text><text x="120" y="379" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/emprestimos</text>
+    <rect x="44" y="402" width="308" height="34" rx="8" fill="#121829"/><rect x="54" y="410" width="56" height="18" rx="5" fill="#6366f1" opacity="0.18"/><text x="60" y="423" font-family="ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#6366f1">POST</text><text x="120" y="423" font-family="ui-monospace,monospace" font-size="9.5" fill="#aab4cc">/api/v1/emprestimos</text>
+    <rect x="388" y="56" width="384" height="416" rx="12" fill="#070a13" stroke="#222b44"/>
+    <rect x="388" y="56" width="384" height="30" rx="12" fill="#121829"/>
+    <text x="404" y="76" font-family="ui-monospace,monospace" font-size="9.5" fill="#6b7694">response · 200 OK · 42 ms</text>
+    <text x="406" y="108" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">{</text>
+    <text x="406" y="126" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">  "page": 1,</text>
+    <text x="406" y="144" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">  "total": 128,</text>
+    <text x="406" y="162" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">  "data": [</text>
+    <text x="406" y="180" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">    {</text>
+    <text x="406" y="198" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "id": 1,</text>
+    <text x="406" y="216" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "titulo": "Clean Architecture",</text>
+    <text x="406" y="234" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "autor": "Robert C. Martin",</text>
+    <text x="406" y="252" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "isbn": "9780134494166",</text>
+    <text x="406" y="270" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "disponivel": true,</text>
+    <text x="406" y="288" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "emprestimos": 7</text>
+    <text x="406" y="306" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">    },</text>
+    <text x="406" y="324" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">    {</text>
+    <text x="406" y="342" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "id": 2,</text>
+    <text x="406" y="360" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "titulo": "Refactoring",</text>
+    <text x="406" y="378" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "autor": "Martin Fowler",</text>
+    <text x="406" y="396" font-family="ui-monospace,monospace" font-size="10.5" fill="#7dd3fc" xml:space="preserve">      "disponivel": false</text>
+    <text x="406" y="414" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">    }</text>
+    <text x="406" y="432" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">  ]</text>
+    <text x="406" y="450" font-family="ui-monospace,monospace" font-size="10.5" fill="#94a3b8" xml:space="preserve">}</text>
+  
+</svg>

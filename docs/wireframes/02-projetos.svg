@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 900" width="960" height="900" role="img" aria-label="Wireframe — Projetos">
+  <rect width="960" height="900" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="900" rx="0" fill="#ffffff" stroke="#c9cfdb"/>
+  <rect x="0" y="0" width="960" height="56" rx="0" fill="#f7f8fb" stroke="#c9cfdb"/>
+  <rect x="20" y="16" width="24" height="24" rx="6" fill="#9aa6ff" stroke="#6b78e0"/>
+  <text x="54" y="33" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#3d4555" text-anchor="start">Nome Sobrenome</text>
+  <text x="630" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#6b78e0" text-anchor="start">Sobre Mim</text>
+  <text x="710" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Projetos</text>
+  <text x="790" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Experiências</text>
+  <text x="870" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Contato</text>
+  <rect x="874" y="17" width="30" height="22" rx="5" fill="#dde3ed" stroke="#c9cfdb"/><text x="889" y="32" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">PT</text>
+  <rect x="910" y="17" width="30" height="22" rx="5" fill="#dde3ed" stroke="#c9cfdb"/><text x="925" y="32" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="middle">☾</text>
+  
+  <text x="40" y="110" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#6b78e0" text-anchor="start">02</text>
+  <text x="40" y="140" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#3d4555" text-anchor="start">Projetos</text>
+  <text x="40" y="164" font-family="system-ui,sans-serif" font-size="10.5" font-weight="400" fill="#5b6577" text-anchor="start">Linha do tempo — do mais antigo ao mais recente</text>
+  <rect x="40" y="190" width="78" height="28" rx="8" fill="#9aa6ff" stroke="#c9cfdb"/><text x="79" y="209" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Todos</text>
+  <rect x="126" y="190" width="78" height="28" rx="8" fill="#eef1f6" stroke="#c9cfdb"/><text x="165" y="209" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">Web</text>
+  <rect x="212" y="190" width="78" height="28" rx="8" fill="#eef1f6" stroke="#c9cfdb"/><text x="251" y="209" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">API</text>
+  <rect x="298" y="190" width="78" height="28" rx="8" fill="#eef1f6" stroke="#c9cfdb"/><text x="337" y="209" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">Acadêmico</text>
+  <rect x="790" y="190" width="130" height="28" rx="8" fill="#ffffff" stroke="#c9cfdb"/><text x="855" y="209" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">⇅ ordenar</text>
+  <line x1="52" y1="250" x2="52" y2="770" stroke="#c9cfdb" stroke-dasharray="4 4"/>
+  <circle cx="52" cy="270" r="9" fill="#9aa6ff" stroke="#6b78e0"/>
+  <rect x="84" y="250" width="836" height="156" rx="12" fill="#ffffff" stroke="#c9cfdb"/>
+  <rect x="84" y="250" width="300" height="156" rx="12" fill="#dde3ed" stroke="#c9cfdb"/><text x="234" y="332" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#8e97a8" text-anchor="middle">imagem / GIF do projeto</text>
+  <text x="406" y="278" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#6b78e0" text-anchor="start">mês/ano — mês/ano · categoria</text>
+  <text x="406" y="302" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#3d4555" text-anchor="start">Nome do Projeto</text>
+  <rect x="406" y="314" width="480" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="328" width="288" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="350" width="420" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="363" width="252" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="378" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="435" y="391" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">React</text><rect x="470" y="378" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="499" y="391" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">Node</text><rect x="534" y="378" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="563" y="391" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">SQL</text>
+  <rect x="606" y="376" width="118" height="22" rx="6" fill="#ffffff" stroke="#c9cfdb"/><text x="665" y="391" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600" fill="#5b6577" text-anchor="middle">GitHub ↗</text>
+  <circle cx="52" cy="446" r="9" fill="#9aa6ff" stroke="#6b78e0"/>
+  <rect x="84" y="426" width="836" height="156" rx="12" fill="#ffffff" stroke="#c9cfdb"/>
+  <rect x="84" y="426" width="300" height="156" rx="12" fill="#dde3ed" stroke="#c9cfdb"/><text x="234" y="508" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#8e97a8" text-anchor="middle">imagem / GIF do projeto</text>
+  <text x="406" y="454" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#6b78e0" text-anchor="start">mês/ano — mês/ano · categoria</text>
+  <text x="406" y="478" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#3d4555" text-anchor="start">Nome do Projeto</text>
+  <rect x="406" y="490" width="480" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="504" width="288" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="526" width="420" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="539" width="252" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="554" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="435" y="567" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">React</text><rect x="470" y="554" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="499" y="567" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">Node</text><rect x="534" y="554" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="563" y="567" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">SQL</text>
+  <rect x="606" y="552" width="118" height="22" rx="6" fill="#ffffff" stroke="#c9cfdb"/><text x="665" y="567" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600" fill="#5b6577" text-anchor="middle">GitHub ↗</text>
+  <circle cx="52" cy="622" r="9" fill="#9aa6ff" stroke="#6b78e0"/>
+  <rect x="84" y="602" width="836" height="156" rx="12" fill="#ffffff" stroke="#c9cfdb"/>
+  <rect x="84" y="602" width="300" height="156" rx="12" fill="#dde3ed" stroke="#c9cfdb"/><text x="234" y="684" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#8e97a8" text-anchor="middle">imagem / GIF do projeto</text>
+  <text x="406" y="630" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#6b78e0" text-anchor="start">mês/ano — mês/ano · categoria</text>
+  <text x="406" y="654" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#3d4555" text-anchor="start">Nome do Projeto</text>
+  <rect x="406" y="666" width="480" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="680" width="288" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="702" width="420" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="406" y="715" width="252" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="406" y="730" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="435" y="743" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">React</text><rect x="470" y="730" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="499" y="743" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">Node</text><rect x="534" y="730" width="58" height="18" rx="9" fill="#dde3ed" stroke="none"/><text x="563" y="743" font-family="system-ui,sans-serif" font-size="8" font-weight="500" fill="#5b6577" text-anchor="middle">SQL</text>
+  <rect x="606" y="728" width="118" height="22" rx="6" fill="#ffffff" stroke="#c9cfdb"/><text x="665" y="743" font-family="system-ui,sans-serif" font-size="8.5" font-weight="600" fill="#5b6577" text-anchor="middle">GitHub ↗</text>
+  
+  <rect x="0" y="830" width="960" height="70" rx="0" fill="#f7f8fb" stroke="#c9cfdb"/>
+  <text x="24" y="858" font-family="system-ui,sans-serif" font-size="9.5" font-weight="400" fill="#5b6577" text-anchor="start">Rodapé: nome · navegação · redes sociais · ©</text>
+  <text x="24" y="876" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#8e97a8" text-anchor="start">Feito com Next.js · TypeScript · Tailwind CSS</text>
+</svg>

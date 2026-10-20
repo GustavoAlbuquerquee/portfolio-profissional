@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="sistema-agendamento.vercel.app/painel">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e1322"/><stop offset="1" stop-color="#151b2c"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="38" fill="#070a13"/>
+  <circle cx="22" cy="19" r="5" fill="#ef4444"/><circle cx="40" cy="19" r="5" fill="#f59e0b"/><circle cx="58" cy="19" r="5" fill="#22c55e"/>
+  <rect x="80" y="10" width="700" height="18" rx="9" fill="#151b2c"/>
+  <text x="94" y="23" font-family="ui-monospace,monospace" font-size="10" fill="#6b7694">sistema-agendamento.vercel.app/painel</text>
+  
+    <rect x="28" y="58" width="300" height="414" rx="12" fill="#0b1020" stroke="#222b44"/>
+    <text x="48" y="86" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#e8ecf7">Entrar</text>
+    <text x="48" y="106" font-family="system-ui,sans-serif" font-size="9.5" fill="#6b7694">Acesse para gerenciar sua agenda</text>
+    <text x="48" y="138" font-family="system-ui,sans-serif" font-size="9" fill="#8b96b4">E-mail</text>
+    <rect x="48" y="146" width="260" height="30" rx="8" fill="#151b2c" stroke="#2a3558"/>
+    <text x="60" y="166" font-family="ui-monospace,monospace" font-size="9.5" fill="#6b7694">profissional@clinica.com</text>
+    <text x="48" y="198" font-family="system-ui,sans-serif" font-size="9" fill="#8b96b4">Senha</text>
+    <rect x="48" y="206" width="260" height="30" rx="8" fill="#151b2c" stroke="#2a3558"/>
+    <text x="60" y="226" font-family="ui-monospace,monospace" font-size="11" fill="#4b5676">••••••••••</text>
+    <rect x="48" y="252" width="260" height="32" rx="8" fill="url(#acc)"/>
+    <text x="146" y="272" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Entrar</text>
+    <text x="48" y="306" font-family="system-ui,sans-serif" font-size="9" fill="#6b7694">Perfis: cliente · profissional · admin</text>
+    <rect x="48" y="326" width="260" height="1" fill="#222b44"/>
+    <circle cx="54" cy="352" r="3" fill="#0ea5e9"/><text x="66" y="356" font-family="system-ui,sans-serif" font-size="9.5" fill="#8b96b4">Bloqueio de horários em conflito</text>
+    <circle cx="54" cy="378" r="3" fill="#0ea5e9"/><text x="66" y="382" font-family="system-ui,sans-serif" font-size="9.5" fill="#8b96b4">Notificação por e-mail</text>
+    <circle cx="54" cy="404" r="3" fill="#0ea5e9"/><text x="66" y="408" font-family="system-ui,sans-serif" font-size="9.5" fill="#8b96b4">Disponibilidade por profissional</text>
+    <rect x="348" y="58" width="424" height="414" rx="12" fill="#121829" stroke="#222b44"/>
+    <text x="370" y="86" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#e8ecf7">Agenda · Semana 12</text>
+    <text x="398" y="110" font-family="ui-monospace,monospace" font-size="9" fill="#6b7694">SEG</text>
+    <text x="474" y="110" font-family="ui-monospace,monospace" font-size="9" fill="#6b7694">TER</text>
+    <text x="550" y="110" font-family="ui-monospace,monospace" font-size="9" fill="#6b7694">QUA</text>
+    <text x="626" y="110" font-family="ui-monospace,monospace" font-size="9" fill="#6b7694">QUI</text>
+    <text x="702" y="110" font-family="ui-monospace,monospace" font-size="9" fill="#6b7694">SEX</text>
+    <rect x="386" y="122" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="462" y="122" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="470" y="142" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">08:00</text><text x="470" y="155" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="538" y="122" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="614" y="122" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="622" y="142" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">08:00</text><text x="622" y="155" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="690" y="122" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="386" y="178" width="64" height="46" rx="7" fill="#3f1d2b" stroke="#9f1239"/><text x="394" y="205" font-family="system-ui" font-size="7.5" fill="#fda4af">Indisponível</text>
+    <rect x="462" y="178" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="470" y="198" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">09:00</text><text x="470" y="211" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="538" y="178" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="614" y="178" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="622" y="198" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">09:00</text><text x="622" y="211" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="690" y="178" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="386" y="234" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="462" y="234" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="538" y="234" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="546" y="254" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">010:00</text><text x="546" y="267" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="614" y="234" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="690" y="234" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="698" y="254" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">010:00</text><text x="698" y="267" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="386" y="290" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="462" y="290" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="538" y="290" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="546" y="310" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">011:00</text><text x="546" y="323" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="614" y="290" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="690" y="290" width="64" height="46" rx="7" fill="#3f1d2b" stroke="#9f1239"/><text x="698" y="317" font-family="system-ui" font-size="7.5" fill="#fda4af">Indisponível</text>
+    <rect x="386" y="346" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="462" y="346" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="470" y="366" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">012:00</text><text x="470" y="379" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="538" y="346" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="614" y="346" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="690" y="346" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="698" y="366" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">012:00</text><text x="698" y="379" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="386" y="402" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="462" y="402" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="538" y="402" width="64" height="46" rx="7" fill="#1e3a8a" stroke="#3b82f6"/><text x="546" y="422" font-family="ui-monospace,monospace" font-size="7.5" fill="#93c5fd">013:00</text><text x="546" y="435" font-family="system-ui" font-size="7.5" fill="#bfdbfe">Consulta</text>
+    <rect x="614" y="402" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <rect x="690" y="402" width="64" height="46" rx="7" fill="#151b2c" stroke="#222b44"/>
+    <text x="370" y="462" font-family="system-ui,sans-serif" font-size="9" fill="#6b7694">10 atendimentos confirmados · 2 horários bloqueados</text>
+  
+</svg>

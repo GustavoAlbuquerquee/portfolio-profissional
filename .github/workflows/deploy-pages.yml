@@ -1,0 +1,67 @@
+# Deploy alternativo: exportação estática publicada no GitHub Pages.
+#
+# A hospedagem principal do projeto é a Vercel, que roda a aplicação Next
+# completa (incluindo a API Route /api/contact). Este workflow existe como
+# segunda opção de hospedagem gratuita: ele gera um build 100% estático,
+# no qual a API Route não existe e o formulário de contato cai no
+# fallback `mailto:` implementado em src/components/ContactForm.tsx.
+#
+# Para ativar: Settings > Pages > Build and deployment > Source: GitHub Actions.
+
+name: Deploy (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/configure-pages@v5
+
+      - run: npm ci
+
+      # A exportação estática não suporta Route Handlers.
+      - name: Remover API Route do build estático
+        run: rm -rf src/app/api
+
+      - name: Build estático
+        env:
+          GITHUB_PAGES: "true"
+          GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
+
+      - name: Impedir processamento pelo Jekyll
+        run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

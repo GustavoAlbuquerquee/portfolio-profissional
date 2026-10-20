@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 860" width="960" height="860" role="img" aria-label="Wireframe — Sobre Mim">
+  <rect width="960" height="860" fill="#ffffff"/>
+  <rect x="0" y="0" width="960" height="860" rx="0" fill="#ffffff" stroke="#c9cfdb"/>
+  <rect x="0" y="0" width="960" height="56" rx="0" fill="#f7f8fb" stroke="#c9cfdb"/>
+  <rect x="20" y="16" width="24" height="24" rx="6" fill="#9aa6ff" stroke="#6b78e0"/>
+  <text x="54" y="33" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#3d4555" text-anchor="start">Nome Sobrenome</text>
+  <text x="630" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#6b78e0" text-anchor="start">Sobre Mim</text>
+  <text x="710" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Projetos</text>
+  <text x="790" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Experiências</text>
+  <text x="870" y="33" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Contato</text>
+  <rect x="874" y="17" width="30" height="22" rx="5" fill="#dde3ed" stroke="#c9cfdb"/><text x="889" y="32" font-family="system-ui,sans-serif" font-size="9" font-weight="600" fill="#5b6577" text-anchor="middle">PT</text>
+  <rect x="910" y="17" width="30" height="22" rx="5" fill="#dde3ed" stroke="#c9cfdb"/><text x="925" y="32" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="middle">☾</text>
+  
+  <rect x="0" y="56" width="960" height="300" rx="0" fill="#fbfcfe" stroke="#c9cfdb"/>
+  <rect x="40" y="92" width="180" height="24" rx="12" fill="#dde3ed" stroke="none"/><text x="56" y="108" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#5b6577" text-anchor="start">disponibilidade</text>
+  <text x="40" y="150" font-family="system-ui,sans-serif" font-size="12" font-weight="400" fill="#5b6577" text-anchor="start">Olá, eu sou</text>
+  <text x="40" y="186" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="#3d4555" text-anchor="start">NOME SOBRENOME</text>
+  <text x="40" y="210" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#6b78e0" text-anchor="start">cargo / área de atuação</text>
+  <rect x="40" y="230" width="420" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="244" width="252" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="40" y="274" width="130" height="36" rx="8" fill="#9aa6ff" stroke="#6b78e0"/><text x="105" y="297" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff" text-anchor="middle">Ver projetos</text>
+  <rect x="184" y="274" width="150" height="36" rx="8" fill="#ffffff" stroke="#c9cfdb"/><text x="259" y="297" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#5b6577" text-anchor="middle">Entrar em contato</text>
+  <rect x="700" y="110" width="200" height="200" rx="24" fill="#eef1f6" stroke="#c9cfdb"/><text x="800" y="220" font-family="system-ui,sans-serif" font-size="11" font-weight="400" fill="#9aa3b4" text-anchor="middle">foto / iniciais</text>
+  <rect x="40" y="384" width="272" height="80" rx="12" fill="#eef1f6" stroke="#c9cfdb"/><text x="60" y="418" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#3d4555" text-anchor="start">00</text><text x="60" y="438" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#5b6577" text-anchor="start">indicador de destaque</text>
+  <rect x="334" y="384" width="272" height="80" rx="12" fill="#eef1f6" stroke="#c9cfdb"/><text x="354" y="418" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#3d4555" text-anchor="start">00</text><text x="354" y="438" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#5b6577" text-anchor="start">indicador de destaque</text>
+  <rect x="628" y="384" width="272" height="80" rx="12" fill="#eef1f6" stroke="#c9cfdb"/><text x="648" y="418" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#3d4555" text-anchor="start">00</text><text x="648" y="438" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#5b6577" text-anchor="start">indicador de destaque</text>
+  <text x="40" y="512" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#6b78e0" text-anchor="start">01</text>
+  <text x="40" y="540" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#3d4555" text-anchor="start">Sobre Mim</text>
+  <text x="40" y="562" font-family="system-ui,sans-serif" font-size="10" font-weight="400" fill="#5b6577" text-anchor="start">Formação, área de atuação, interesses e objetivos (PT / EN)</text>
+  <rect x="40" y="586" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="602" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="618" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="634" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="650" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="666" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="682" width="540" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="40" y="698" width="324" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <rect x="620" y="586" width="300" height="148" rx="12" fill="#eef1f6" stroke="#c9cfdb"/><text x="640" y="612" font-family="system-ui,sans-serif" font-size="10" font-weight="600" fill="#3d4555" text-anchor="start">Formação / atalhos</text><rect x="640" y="626" width="260" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="640" y="640" width="260" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="640" y="654" width="260" height="8" rx="4" fill="#dde3ed" stroke="none"/><rect x="640" y="668" width="156" height="8" rx="4" fill="#dde3ed" stroke="none"/>
+  <text x="40" y="764" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#6b78e0" text-anchor="start">02</text>
+  <text x="40" y="788" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#3d4555" text-anchor="start">Habilidades — grid 2×2 de grupos com badges</text>
+  
+  <rect x="0" y="790" width="960" height="70" rx="0" fill="#f7f8fb" stroke="#c9cfdb"/>
+  <text x="24" y="818" font-family="system-ui,sans-serif" font-size="9.5" font-weight="400" fill="#5b6577" text-anchor="start">Rodapé: nome · navegação · redes sociais · ©</text>
+  <text x="24" y="836" font-family="system-ui,sans-serif" font-size="9" font-weight="400" fill="#8e97a8" text-anchor="start">Feito com Next.js · TypeScript · Tailwind CSS</text>
+</svg>
