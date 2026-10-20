@@ -52,7 +52,7 @@ export const projects: Project[] = [
     },
     technologies: ["React", "TypeScript", "Tailwind CSS", "n8n", "Vercel"],
     repository: "https://github.com/GustavoAlbuquerquee/primor-moveis",
-    image: "/projects/primor-moveis.svg",
+    image: "/projects/primor-moveis.jpg",
   },
   {
     id: "arquiteck",
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     },
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
     repository: "https://github.com/GustavoAlbuquerquee/Arquiteck",
-    image: "/projects/arquiteck.svg",
+    image: "/projects/arquiteck.jpg",
   },
   {
     id: "estagi-on",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Nodemailer"],
     repository: "https://github.com/GustavoAlbuquerquee/portfolio-profissional",
     demo: "https://portfolio-profissional-alpha-murex.vercel.app",
-    image: "/projects/portfolio-profissional.svg",
+    image: "/projects/portfolio-profissional.jpg",
   },
 ];
 

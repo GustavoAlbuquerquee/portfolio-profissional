@@ -21,7 +21,7 @@
 </table>
 
 > [!IMPORTANT]
-> **Ainda falta preencher:** o **link da demo online** e o **link do protótipo no Figma** nos *Links Úteis*, e as **capturas reais** dos projetos em `public/projects/` — as imagens atuais são mockups temporários.
+> **Ainda falta preencher:** o **link do protótipo no Figma** nos *Links Úteis*, e a **captura real** de três projetos (`estagi-on`, `yesalyle` e `vitalis`), que ainda não têm URL pública. Rode `node scripts/valida-capturas.mjs` para ver a situação de cada um.
 
 ---
 
@@ -115,7 +115,7 @@
 
 ## 🖼 Protótipos e Wireframes
 
-Wireframes de média fidelidade produzidos na etapa **Lab01S01**, antes da implementação. Arquivos originais em [`docs/wireframes/`](./docs/wireframes).
+Wireframes de média fidelidade das quatro páginas, alinhados à identidade visual implementada. Arquivos em [`docs/wireframes/`](./docs/wireframes), em SVG com texto editável e camadas nomeadas — arraste-os para dentro do Figma e eles entram como vetores editáveis, sem redesenhar nada.
 
 | Sobre Mim | Projetos |
 |-----------|----------|
@@ -399,12 +399,12 @@ portfolio-profissional/
 │
 ├── public/
 │   ├── projects/                      # Imagens/GIFs dos projetos em funcionamento
-│   │   ├── primor-moveis.svg
-│   │   ├── arquiteck.svg
-│   │   ├── estagi-on.svg
-│   │   ├── yesalyle.svg
-│   │   ├── vitalis.svg
-│   │   └── portfolio-profissional.svg
+│   │   ├── primor-moveis.jpg              # captura real
+│   │   ├── arquiteck.jpg                 # captura real
+│   │   ├── portfolio-profissional.jpg    # captura real
+│   │   ├── estagi-on.svg                 # mockup, aguardando captura
+│   │   ├── yesalyle.svg                  # mockup, aguardando captura
+│   │   └── vitalis.svg                   # mockup, aguardando captura
 │   └── img/                           # Foto de perfil, currículo e outros assets
 │
 ├── src/
@@ -479,15 +479,15 @@ portfolio-profissional/
 
 | Sobre Mim — tema claro | Projetos — tema escuro |
 |------------------------|------------------------|
-| <img src="docs/screenshots/home-light.png" width="420px" alt="Página Sobre Mim no tema claro"/> | <img src="docs/screenshots/projetos-dark.png" width="420px" alt="Página de Projetos no tema escuro"/> |
+| <img src="docs/screenshots/home-light.jpg" width="420px" alt="Página Sobre Mim no tema claro"/> | <img src="docs/screenshots/projetos-dark.jpg" width="420px" alt="Página de Projetos no tema escuro"/> |
 
 | Experiências | Contato |
 |--------------|---------|
-| <img src="docs/screenshots/experiencias-light.png" width="420px" alt="Página de Experiências"/> | <img src="docs/screenshots/contato-dark.png" width="420px" alt="Página de Contato"/> |
+| <img src="docs/screenshots/experiencias-light.jpg" width="420px" alt="Página de Experiências"/> | <img src="docs/screenshots/contato-dark.jpg" width="420px" alt="Página de Contato"/> |
 
 **Responsividade (390 px):**
 
-<img src="docs/screenshots/mobile-home.png" width="260px" alt="Página inicial no celular"/> <img src="docs/screenshots/mobile-contato.png" width="260px" alt="Página de contato no celular"/>
+<img src="docs/screenshots/mobile-home.jpg" width="260px" alt="Página inicial no celular"/> <img src="docs/screenshots/mobile-contato.jpg" width="260px" alt="Página de contato no celular"/>
 
 ### 💻 Exemplo de Saída no Terminal
 
