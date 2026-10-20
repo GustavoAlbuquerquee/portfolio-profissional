@@ -71,7 +71,7 @@
 
 ## 🔗 Links Úteis
 
-* 🌐 **Demo Online:** [Acesse o portfólio publicado](https://portfolio-profissional.vercel.app)
+* 🌐 **Demo Online:** [Acesse o portfólio publicado](https://portfolio-profissional-alpha-murex.vercel.app)
   > 💻 **Descrição:** Aplicação Next.js completa em produção na Vercel, com a API Route de contato ativa.
 * 🎨 **Protótipo no Figma:** [Wireframes de média fidelidade](https://www.figma.com/)
   > 🖌️ **Descrição:** Wireframes das quatro páginas (desktop e mobile). As versões exportadas estão em [`docs/wireframes/`](./docs/wireframes).

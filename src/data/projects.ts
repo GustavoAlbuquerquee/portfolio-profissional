@@ -182,6 +182,7 @@ export const projects: Project[] = [
     },
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Nodemailer"],
     repository: "https://github.com/GustavoAlbuquerquee/portfolio-profissional",
+    demo: "https://portfolio-profissional-alpha-murex.vercel.app",
     image: "/projects/portfolio-profissional.svg",
   },
 ];
