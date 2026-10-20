@@ -81,35 +81,6 @@ export const experiences: Experience[] = [
     technologies: ["React", "JavaScript", "TypeScript", "CSS3"],
   },
   {
-    id: "begrowth",
-    organization: "BeGrowth",
-    role: {
-      pt: "Estagiário de Desenvolvimento Front-end",
-      en: "Front-end Development Intern",
-    },
-    type: "internship",
-    start: "2025-08",
-    end: "2026-01",
-    location: { pt: "Belo Horizonte, MG", en: "Belo Horizonte, Brazil" },
-    description: {
-      pt: "Apoio ao desenvolvimento front-end do produto, com construção de telas, correção de bugs e acompanhamento da equipe técnica em demandas contínuas de interface.",
-      en: "Support work on the product front-end, building screens, fixing bugs and following the technical team through a continuous stream of interface tasks.",
-    },
-    achievements: {
-      pt: [
-        "Entrega contínua de telas e ajustes de interface acompanhada pela equipe técnica",
-        "Correção de bugs de front-end com investigação da causa, não apenas do sintoma",
-        "Consolidação da base em React e TypeScript em ritmo de time de produto",
-      ],
-      en: [
-        "Steady delivery of screens and interface fixes alongside the technical team",
-        "Front-end bug fixing that investigated root causes, not just symptoms",
-        "Consolidated my React and TypeScript foundation at product-team pace",
-      ],
-    },
-    technologies: ["HTML5", "CSS3", "JavaScript", "React"],
-  },
-  {
     id: "nextletter",
     organization: "Nextletter Holdings",
     role: { pt: "Software Engineer", en: "Software Engineer" },

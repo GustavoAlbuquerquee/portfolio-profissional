@@ -55,7 +55,7 @@ export const profile = {
       label: { pt: "De experiência profissional", en: "Of professional experience" },
     },
     {
-      value: "6",
+      value: "5",
       label: { pt: "Empresas onde atuei", en: "Companies I have worked for" },
     },
     {
