@@ -59,6 +59,33 @@
 
   --radius-card: var(--radius);
   --shadow-card: var(--shadow);
+
+  /* As curvas nativas do CSS sao fracas demais: toda transicao do projeto
+     usa uma ease-out forte, que arranca rapido e da sensacao de resposta. */
+  --default-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  --default-transition-duration: 160ms;
+  --ease-snap: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Resposta ao toque: tudo que se pressiona encolhe de leve, confirmando
+   que a interface ouviu o clique. Sob movimento reduzido, so a cor muda. */
+.pressable {
+  transition:
+    color 160ms var(--ease-snap),
+    background-color 160ms var(--ease-snap),
+    border-color 160ms var(--ease-snap),
+    transform 140ms var(--ease-snap);
+}
+
+.pressable:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pressable:active {
+    transform: none;
+  }
 }
 
 html {

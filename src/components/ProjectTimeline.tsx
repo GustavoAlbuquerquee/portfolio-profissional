@@ -62,7 +62,7 @@ export function ProjectTimeline() {
         <button
           type="button"
           onClick={() => setOrder((value) => (value === "asc" ? "desc" : "asc"))}
-          className="border-line bg-surface text-muted hover:text-accent hover:border-accent inline-flex items-center gap-2 rounded border px-3 py-2 text-xs font-semibold transition-colors active:translate-y-px"
+          className="border-line bg-surface text-muted hover:text-accent hover:border-accent inline-flex items-center gap-2 rounded border px-3 py-2 text-xs font-semibold pressable"
         >
           <ArrowDownUp className="h-3.5 w-3.5" aria-hidden />
           {order === "asc" ? t.projects.orderOldest : t.projects.orderNewest}
@@ -172,7 +172,7 @@ export function ProjectTimeline() {
                                   href={project.repository}
                                   target="_blank"
                                   rel="noreferrer noopener"
-                                  className="border-line bg-surface-2 text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-3.5 py-2 text-xs font-semibold transition-colors active:translate-y-px"
+                                  className="border-line bg-surface-2 text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-3.5 py-2 text-xs font-semibold pressable"
                                 >
                                   <GithubIcon className="h-4 w-4" />
                                   {t.projects.repository}
@@ -183,7 +183,7 @@ export function ProjectTimeline() {
                                   href={project.demo}
                                   target="_blank"
                                   rel="noreferrer noopener"
-                                  className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-3.5 py-2 text-xs font-semibold transition-colors active:translate-y-px"
+                                  className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-3.5 py-2 text-xs font-semibold pressable"
                                 >
                                   {t.projects.liveDemo}
                                   <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -244,7 +244,7 @@ function FilterButton({
       onClick={onClick}
       aria-pressed={active}
       className={classNames(
-        "rounded border px-3 py-2 text-xs font-semibold transition-colors active:translate-y-px",
+        "rounded border px-3 py-2 text-xs font-semibold pressable",
         active
           ? "border-accent bg-accent text-on-accent"
           : "border-line bg-surface text-muted hover:text-fg hover:border-accent",

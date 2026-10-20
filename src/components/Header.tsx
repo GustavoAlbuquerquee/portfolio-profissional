@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={classNames(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-200",
+        "sticky top-0 z-50 w-full border-b pressable duration-200",
         scrolled
           ? "border-line bg-bg/85 backdrop-blur-md"
           : "border-transparent bg-transparent",
@@ -63,7 +63,7 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={classNames(
-                  "rounded px-3 py-2 text-sm font-medium transition-colors",
+                  "rounded px-3 py-2 text-sm font-medium pressable",
                   active
                     ? "text-accent bg-accent-soft"
                     : "text-muted hover:text-fg hover:bg-surface-2",
@@ -84,7 +84,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-            className="border-line bg-surface text-muted hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded border transition-colors md:hidden"
+            className="border-line bg-surface text-muted hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded border pressable md:hidden"
           >
             {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
           </button>
@@ -107,7 +107,7 @@ export function Header() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={classNames(
-                    "rounded px-3 py-3 text-sm font-medium transition-colors",
+                    "rounded px-3 py-3 text-sm font-medium pressable",
                     active ? "text-accent bg-accent-soft" : "text-muted hover:text-fg",
                   )}
                 >

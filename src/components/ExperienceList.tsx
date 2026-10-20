@@ -167,7 +167,7 @@ function FilterButton({
       onClick={onClick}
       aria-pressed={active}
       className={classNames(
-        "rounded border px-3 py-2 text-xs font-semibold transition-colors",
+        "rounded border px-3 py-2 text-xs font-semibold pressable",
         active
           ? "border-accent bg-accent text-on-accent"
           : "border-line bg-surface text-muted hover:text-fg hover:border-accent/40",

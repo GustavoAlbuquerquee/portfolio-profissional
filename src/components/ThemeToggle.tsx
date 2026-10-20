@@ -14,7 +14,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={t.theme.toggle}
       title={theme === "dark" ? t.theme.light : t.theme.dark}
-      className="border-line bg-surface text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded border transition-colors"
+      className="border-line bg-surface text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded border pressable"
     >
       {theme === "dark" ? (
         <Sun className="h-4 w-4" aria-hidden />

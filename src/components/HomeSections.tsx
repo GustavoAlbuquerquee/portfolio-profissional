@@ -61,7 +61,7 @@ export function Hero() {
               <Magnet padding={70} magnetStrength={6} maxOffset={9}>
                 <Link
                   href="/projetos"
-                  className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
+                  className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold pressable"
                 >
                   {t.home.ctaProjects}
                   <ArrowRight className="h-4 w-4" aria-hidden />
@@ -69,7 +69,7 @@ export function Hero() {
               </Magnet>
               <Link
                 href="/contato"
-                className="border-line bg-surface text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
+                className="border-line bg-surface text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-5 py-2.5 text-sm font-semibold pressable"
               >
                 {t.home.ctaContact}
               </Link>
@@ -77,7 +77,7 @@ export function Hero() {
                 <a
                   href={asset(profile.resume)}
                   download
-                  className="text-muted hover:text-accent inline-flex items-center gap-2 rounded px-4 py-2.5 text-sm font-semibold transition-colors"
+                  className="text-muted hover:text-accent inline-flex items-center gap-2 rounded px-4 py-2.5 text-sm font-semibold pressable"
                 >
                   <Download className="h-4 w-4" aria-hidden />
                   {t.home.ctaResume}
@@ -175,20 +175,20 @@ export function AboutSection() {
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/projetos" className="text-muted hover:text-accent transition-colors">
+                <Link href="/projetos" className="text-muted hover:text-accent pressable">
                   {t.nav.projects}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/experiencias"
-                  className="text-muted hover:text-accent transition-colors"
+                  className="text-muted hover:text-accent pressable"
                 >
                   {t.nav.experiences}
                 </Link>
               </li>
               <li>
-                <Link href="/contato" className="text-muted hover:text-accent transition-colors">
+                <Link href="/contato" className="text-muted hover:text-accent pressable">
                   {t.nav.contact}
                 </Link>
               </li>

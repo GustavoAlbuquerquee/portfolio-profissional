@@ -160,7 +160,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold text-on-accent transition-colors disabled:cursor-not-allowed disabled:opacity-60"
+          className="bg-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold text-on-accent pressable disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? (
             <LoaderCircle className="h-4 w-4 animate-spin" aria-hidden />
@@ -191,7 +191,7 @@ export function ContactForm() {
 
 function inputClass(hasError: boolean) {
   return classNames(
-    "border-line bg-surface-2 text-fg placeholder:text-muted/70 w-full rounded border px-3.5 py-2.5 text-sm transition-colors",
+    "border-line bg-surface-2 text-fg placeholder:text-muted/70 w-full rounded border px-3.5 py-2.5 text-sm pressable",
     "focus:border-accent focus:outline-none",
     hasError && "border-red-500/70",
   );

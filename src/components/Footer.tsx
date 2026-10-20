@@ -46,7 +46,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-muted hover:text-accent text-sm transition-colors"
+                    className="text-muted hover:text-accent text-sm pressable"
                   >
                     {item.label}
                   </Link>
@@ -70,7 +70,7 @@ export function Footer() {
                       rel="noreferrer noopener"
                       aria-label={social.label}
                       title={social.label}
-                      className="border-line bg-surface-2 text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded border transition-colors"
+                      className="border-line bg-surface-2 text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded border pressable"
                     >
                       <Icon className="h-4 w-4" />
                     </a>
@@ -88,7 +88,7 @@ export function Footer() {
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-muted hover:text-accent inline-flex items-center gap-1.5 text-xs font-medium transition-colors"
+            className="text-muted hover:text-accent inline-flex items-center gap-1.5 text-xs font-medium pressable"
           >
             <ArrowUp className="h-3.5 w-3.5" aria-hidden />
             {t.footer.backToTop}

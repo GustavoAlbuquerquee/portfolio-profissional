@@ -108,7 +108,7 @@ export function StintChart() {
 
             <div className="relative h-8" aria-hidden>
               <motion.div
-                className="absolute top-0 flex h-8 items-center overflow-hidden rounded-sm"
+                className="absolute top-0 flex h-8 origin-left items-center overflow-hidden rounded-sm"
                 style={{
                   left: `${linha.esquerda}%`,
                   width: `${linha.largura}%`,
@@ -117,7 +117,7 @@ export function StintChart() {
                 initial={reduceMotion ? false : { scaleX: 0, opacity: 0 }}
                 animate={{ scaleX: 1, opacity: 1 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.28,
                   delay: reduceMotion ? 0 : i * 0.07,
                   ease: [0.21, 0.47, 0.32, 0.98],
                 }}
