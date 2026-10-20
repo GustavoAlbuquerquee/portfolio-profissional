@@ -16,7 +16,7 @@ export function LanguageToggle() {
     <div
       role="group"
       aria-label={t.language.label}
-      className="border-line bg-surface inline-flex items-center rounded-lg border p-0.5"
+      className="border-line bg-surface inline-flex items-center rounded border p-0.5"
     >
       {OPTIONS.map((option) => {
         const active = locale === option.value;
@@ -28,9 +28,9 @@ export function LanguageToggle() {
             aria-pressed={active}
             aria-label={option.value === "pt" ? t.language.pt : t.language.en}
             className={classNames(
-              "rounded-md px-2 py-1 font-mono text-xs font-semibold transition-colors",
+              "rounded px-2 py-1 font-mono text-xs font-semibold transition-colors",
               active
-                ? "bg-accent text-white"
+                ? "bg-accent text-on-accent"
                 : "text-muted hover:text-fg hover:bg-surface-2",
             )}
           >

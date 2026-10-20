@@ -37,6 +37,9 @@ export const dictionaries = {
       skillsSubtitle: "Tecnologias e ferramentas que utilizo no dia a dia",
       highlightsTitle: "Em números",
       quickLinks: "Atalhos",
+      panelRole: "Função",
+      panelBase: "Base",
+      panelEducation: "Formação",
     },
     projects: {
       title: "Projetos",
@@ -138,6 +141,9 @@ export const dictionaries = {
       skillsSubtitle: "Technologies and tools I work with",
       highlightsTitle: "At a glance",
       quickLinks: "Quick links",
+      panelRole: "Role",
+      panelBase: "Based in",
+      panelEducation: "Education",
     },
     projects: {
       title: "Projects",

@@ -10,7 +10,7 @@ export function ProjectsView() {
 
   return (
     <Container as="section" className="py-16 sm:py-20">
-      <SectionHeading as="h1" eyebrow="03" title={t.projects.title} subtitle={t.projects.subtitle} />
+      <SectionHeading as="h1" title={t.projects.title} subtitle={t.projects.subtitle} />
       <ProjectTimeline />
     </Container>
   );

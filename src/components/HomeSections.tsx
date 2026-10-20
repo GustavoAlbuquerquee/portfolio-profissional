@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Download, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { Container } from "./Container";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
@@ -15,47 +15,45 @@ import { asset } from "@/lib/assets";
 export function Hero() {
   const { t, tr } = useI18n();
 
+  /* Linhas do painel lateral: so dados reais do perfil, nada inventado. */
+  const painel = [
+    { rotulo: t.home.panelRole, valor: tr(profile.role) },
+    { rotulo: t.home.panelBase, valor: tr(profile.location) },
+    { rotulo: t.home.panelEducation, valor: profile.education.institution },
+  ];
+
   return (
-    <section className="bg-grid border-line relative overflow-hidden border-b">
-      <Container className="py-20 sm:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
+    <section className="border-line relative overflow-hidden border-b">
+      {/* Faixa de box no topo: divisor estrutural da secao. */}
+      <div className="pit-stripe h-1 w-full opacity-80" aria-hidden />
+
+      <Container className="py-16 sm:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <p className="border-line bg-surface/70 text-muted inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur">
-              <Sparkles className="text-accent h-3.5 w-3.5" aria-hidden />
+            <p className="border-line text-muted inline-flex items-center gap-2 rounded-sm border px-2.5 py-1 font-mono text-xs tracking-wide uppercase">
+              <span className="bg-accent h-1.5 w-1.5 rounded-full" aria-hidden />
               {tr(profile.availability)}
             </p>
 
-            <h1 className="text-fg mt-6 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-              <span className="text-muted block text-lg font-normal sm:text-xl">
-                {t.home.greeting}
-              </span>
+            <h1 className="text-fg font-display mt-6 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
               {profile.name}
             </h1>
 
-            <p className="text-accent mt-3 font-mono text-sm font-medium sm:text-base">
-              {tr(profile.role)}
-            </p>
-
-            <p className="text-muted mt-6 max-w-xl text-base leading-relaxed text-pretty sm:text-lg">
+            <p className="text-muted mt-5 max-w-xl text-base leading-relaxed text-pretty sm:text-lg">
               {tr(profile.headline)}
-            </p>
-
-            <p className="text-muted mt-4 inline-flex items-center gap-1.5 text-sm">
-              <MapPin className="h-4 w-4" aria-hidden />
-              {tr(profile.location)}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/projetos"
-                className="bg-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold text-white transition-colors"
+                className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
               >
                 {t.home.ctaProjects}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link
                 href="/contato"
-                className="border-line bg-surface text-fg hover:border-accent/60 hover:text-accent inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors"
+                className="border-line bg-surface text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
               >
                 {t.home.ctaContact}
               </Link>
@@ -63,7 +61,7 @@ export function Hero() {
                 <a
                   href={asset(profile.resume)}
                   download
-                  className="text-muted hover:text-accent inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors"
+                  className="text-muted hover:text-accent inline-flex items-center gap-2 rounded px-4 py-2.5 text-sm font-semibold transition-colors"
                 >
                   <Download className="h-4 w-4" aria-hidden />
                   {t.home.ctaResume}
@@ -72,34 +70,53 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="from-accent to-accent-2 absolute -inset-3 rounded-3xl bg-gradient-to-br opacity-20 blur-2xl" />
-              <div className="border-line bg-surface shadow-card relative grid h-56 w-56 place-items-center overflow-hidden rounded-3xl border sm:h-64 sm:w-64">
+          {/* Painel de identificacao, no formato de placa de box. */}
+          <div className="border-line bg-surface shadow-card rounded border">
+            <div className="border-line flex items-center gap-4 border-b p-5">
+              <div className="border-line bg-surface-2 grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-sm border">
                 {profile.avatar ? (
                   <Image
                     src={asset(profile.avatar)}
                     alt={profile.name}
-                    width={256}
-                    height={256}
+                    width={64}
+                    height={64}
                     className="h-full w-full object-cover"
                     priority
                   />
                 ) : (
-                  <span className="from-accent to-accent-2 bg-gradient-to-br bg-clip-text font-mono text-7xl font-bold text-transparent">
+                  <span className="text-accent font-display text-2xl font-bold">
                     {profile.initials}
                   </span>
                 )}
               </div>
+              <p className="text-muted font-mono text-xs tracking-wide uppercase">
+                {profile.shortName}
+              </p>
             </div>
+
+            <dl className="divide-line divide-y">
+              {painel.map((linha) => (
+                <div key={linha.rotulo} className="px-5 py-3">
+                  <dt className="text-muted font-mono text-[10px] tracking-[0.15em] uppercase">
+                    {linha.rotulo}
+                  </dt>
+                  <dd className="text-fg mt-1 text-sm leading-snug">{linha.valor}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
 
-        <dl className="border-line mt-16 grid gap-px overflow-hidden rounded-2xl border sm:grid-cols-3">
+        {/* Indicadores em tira, separados por fio, sem caixas de card. */}
+        <dl className="border-line divide-line mt-14 grid border-t border-b sm:grid-cols-3 sm:divide-x">
           {profile.highlights.map((item) => (
-            <div key={item.value} className="bg-surface px-6 py-6">
-              <dt className="text-fg font-mono text-3xl font-bold tracking-tight">{item.value}</dt>
-              <dd className="text-muted mt-1 text-sm">{tr(item.label)}</dd>
+            <div key={item.value} className="border-line border-b py-5 last:border-b-0 sm:border-b-0">
+              <dt className="text-fg font-display tabular text-4xl font-bold tracking-tight">
+                {item.value}
+              </dt>
+              <dd className="text-muted mt-1 font-mono text-[11px] tracking-[0.12em] uppercase">
+                {tr(item.label)}
+              </dd>
             </div>
           ))}
         </dl>
@@ -114,11 +131,7 @@ export function AboutSection() {
 
   return (
     <Container as="section" id="sobre" className="py-20">
-      <SectionHeading
-        eyebrow="01"
-        title={t.home.aboutTitle}
-        subtitle={t.home.aboutSubtitle}
-      />
+      <SectionHeading title={t.home.aboutTitle} subtitle={t.home.aboutSubtitle} />
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.6fr_1fr]">
         <div className="space-y-5">
@@ -130,22 +143,20 @@ export function AboutSection() {
         </div>
 
         <Reveal className="h-fit" delay={0.1}>
-          <div className="border-line bg-surface shadow-card rounded-2xl border p-6">
-            <p className="text-fg text-sm font-semibold">
-              {profile.education.institution}
-            </p>
+          <div className="border-line bg-surface shadow-card rounded border p-6">
+            <p className="text-fg text-sm font-semibold">{profile.education.institution}</p>
             <p className="text-muted mt-1 text-sm">{tr(profile.education.course)}</p>
-            <p className="text-muted mt-1 font-mono text-xs">{profile.education.period}</p>
+            <p className="text-muted tabular mt-1 font-mono text-xs">{profile.education.period}</p>
 
             <hr className="border-line my-5" />
 
-            <p className="text-fg text-xs font-semibold tracking-wider uppercase">
+            <p className="text-muted font-mono text-[10px] tracking-[0.15em] uppercase">
               {t.home.quickLinks}
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
                 <Link href="/projetos" className="text-muted hover:text-accent transition-colors">
-                  → {t.nav.projects}
+                  {t.nav.projects}
                 </Link>
               </li>
               <li>
@@ -153,12 +164,12 @@ export function AboutSection() {
                   href="/experiencias"
                   className="text-muted hover:text-accent transition-colors"
                 >
-                  → {t.nav.experiences}
+                  {t.nav.experiences}
                 </Link>
               </li>
               <li>
                 <Link href="/contato" className="text-muted hover:text-accent transition-colors">
-                  → {t.nav.contact}
+                  {t.nav.contact}
                 </Link>
               </li>
             </ul>
@@ -174,13 +185,21 @@ export function SkillsSection() {
 
   return (
     <Container as="section" id="habilidades" className="py-10">
-      <SectionHeading eyebrow="02" title={t.home.skillsTitle} subtitle={t.home.skillsSubtitle} />
+      <SectionHeading title={t.home.skillsTitle} subtitle={t.home.skillsSubtitle} />
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
+      {/* Setores da stack: fio divisorio no lugar de caixa de card. */}
+      <div className="border-line divide-line mt-10 grid border-t md:grid-cols-2 md:divide-x">
         {skillGroups.map((group, index) => (
-          <Reveal key={group.id} delay={index * 0.06}>
-            <div className="border-line bg-surface shadow-card h-full rounded-2xl border p-6">
-              <h3 className="text-fg text-sm font-semibold">{tr(group.title)}</h3>
+          <Reveal key={group.id} delay={index * 0.05}>
+            <div className="border-line h-full border-b py-6 md:px-6 md:first:pl-0">
+              <div className="flex items-baseline gap-3">
+                <span className="text-accent font-mono text-[11px] tracking-[0.15em] uppercase">
+                  {tr(group.title)}
+                </span>
+                <span className="text-muted tabular font-mono text-[11px]">
+                  {group.items.length}
+                </span>
+              </div>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li key={item}>

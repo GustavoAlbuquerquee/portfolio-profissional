@@ -4,30 +4,41 @@
    controlado pelo ThemeProvider (evita depender so do prefers-color-scheme). */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/* ──────────────────────────────────────────────────────────────────────────
+ * Identidade visual: painel de telemetria de pit lane.
+ * Base neutra de asfalto, um unico acento laranja de box, numerais em mono.
+ * Raio de canto unico e curto (4px) para toda a interface.
+ * ────────────────────────────────────────────────────────────────────────── */
+
 :root {
-  --bg: #f6f7fb;
+  --bg: #f4f4f2;
   --surface: #ffffff;
-  --surface-2: #f1f3f9;
-  --line: #e3e7f0;
-  --fg: #101428;
-  --muted: #5a6478;
-  --accent: #4f46e5;
-  --accent-2: #7c3aed;
-  --accent-soft: #eef0ff;
-  --shadow: 0 1px 2px rgb(16 20 40 / 0.06), 0 8px 24px -12px rgb(16 20 40 / 0.18);
+  --surface-2: #ececeb;
+  --line: #dcdcd9;
+  --fg: #141416;
+  --muted: #5e5e63;
+  /* Laranja de box, escurecido no tema claro para passar em contraste AA. */
+  --accent: #c9500f;
+  --accent-2: #e2621f;
+  --accent-soft: #fbece2;
+  /* Texto sobre o acento: quase preto, nunca branco (contraste 5.4:1). */
+  --on-accent: #141416;
+  --radius: 4px;
+  --shadow: 0 1px 2px rgb(20 20 22 / 0.05), 0 10px 24px -16px rgb(20 20 22 / 0.25);
 }
 
 [data-theme="dark"] {
-  --bg: #070a13;
-  --surface: #0e1322;
-  --surface-2: #151b2c;
-  --line: #222b44;
-  --fg: #e8ecf7;
-  --muted: #94a0b8;
-  --accent: #818cf8;
-  --accent-2: #a78bfa;
-  --accent-soft: #181f3a;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.7);
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --surface-2: #1c1c1f;
+  --line: #2a2a2e;
+  --fg: #ededef;
+  --muted: #8e8e94;
+  --accent: #e2621f;
+  --accent-2: #f0802f;
+  --accent-soft: #2a1710;
+  --on-accent: #0b0b0c;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.5), 0 14px 32px -20px rgb(0 0 0 / 0.8);
 }
 
 @theme inline {
@@ -40,10 +51,13 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
 
+  --radius-card: var(--radius);
   --shadow-card: var(--shadow);
 }
 
@@ -56,23 +70,31 @@ body {
   color: var(--fg);
 }
 
-/* Malha decorativa do topo da pagina */
-.bg-grid {
-  background-image:
-    radial-gradient(60rem 30rem at 50% -10rem, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%),
-    linear-gradient(to right, color-mix(in oklab, var(--line) 70%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--line) 70%, transparent) 1px, transparent 1px);
-  background-size: 100% 100%, 56px 56px, 56px 56px;
+/* Numerais alinhados em coluna: usado em tempos, posicoes e indicadores. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Faixa de pit lane: divisor estrutural, nao enfeite.
+   Repete o traco branco/acento como a linha pintada do box. */
+.pit-stripe {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0 18px,
+    transparent 18px 36px
+  );
 }
 
 ::selection {
   background: color-mix(in oklab, var(--accent) 35%, transparent);
+  color: var(--fg);
 }
 
 *:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 @media (prefers-reduced-motion: reduce) {

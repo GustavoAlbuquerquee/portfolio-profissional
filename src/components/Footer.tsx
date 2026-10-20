@@ -70,7 +70,7 @@ export function Footer() {
                       rel="noreferrer noopener"
                       aria-label={social.label}
                       title={social.label}
-                      className="border-line bg-surface-2 text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded-lg border transition-colors"
+                      className="border-line bg-surface-2 text-muted hover:text-accent hover:border-accent/50 inline-flex h-9 w-9 items-center justify-center rounded border transition-colors"
                     >
                       <Icon className="h-4 w-4" />
                     </a>

@@ -38,9 +38,9 @@ export function ContactChannels() {
         return (
           <li key={social.key} className="h-full">
             <Reveal delay={index * 0.05} className="h-full">
-              <div className="border-line bg-surface shadow-card hover:border-accent/50 group h-full rounded-2xl border p-5 transition-colors">
+              <div className="border-line bg-surface shadow-card hover:border-accent/50 group h-full rounded border p-5 transition-colors">
                 <div className="flex items-start justify-between gap-3">
-                  <span className="bg-accent-soft text-accent grid h-11 w-11 place-items-center rounded-xl">
+                  <span className="bg-accent-soft text-accent grid h-11 w-11 place-items-center rounded">
                     <Icon className="h-5 w-5" />
                   </span>
                   <button

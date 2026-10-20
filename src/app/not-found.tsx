@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="text-muted mt-2 text-sm">{t.notFound.description}</p>
         <Link
           href="/"
-          className="bg-accent hover:bg-accent-2 mt-8 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold text-white transition-colors"
+          className="bg-accent hover:bg-accent-2 mt-8 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold text-on-accent transition-colors"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />
           {t.notFound.back}

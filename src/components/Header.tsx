@@ -47,7 +47,7 @@ export function Header() {
           className="group inline-flex items-center gap-2.5"
           aria-label={profile.name}
         >
-          <span className="from-accent to-accent-2 grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br font-mono text-sm font-bold text-white">
+          <span className="from-accent to-accent-2 grid h-9 w-9 place-items-center rounded bg-gradient-to-br font-mono text-sm font-bold text-on-accent">
             {profile.initials}
           </span>
           <span className="text-fg hidden text-sm font-semibold sm:block">{profile.name}</span>
@@ -63,7 +63,7 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={classNames(
-                  "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "rounded px-3 py-2 text-sm font-medium transition-colors",
                   active
                     ? "text-accent bg-accent-soft"
                     : "text-muted hover:text-fg hover:bg-surface-2",
@@ -84,7 +84,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
-            className="border-line bg-surface text-muted hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded-lg border transition-colors md:hidden"
+            className="border-line bg-surface text-muted hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded border transition-colors md:hidden"
           >
             {open ? <X className="h-4 w-4" aria-hidden /> : <Menu className="h-4 w-4" aria-hidden />}
           </button>
@@ -107,7 +107,7 @@ export function Header() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={classNames(
-                    "rounded-lg px-3 py-3 text-sm font-medium transition-colors",
+                    "rounded px-3 py-3 text-sm font-medium transition-colors",
                     active ? "text-accent bg-accent-soft" : "text-muted hover:text-fg",
                   )}
                 >

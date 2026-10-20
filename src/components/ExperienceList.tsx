@@ -68,10 +68,10 @@ export function ExperienceList() {
             return (
               <li key={experience.id}>
                 <Reveal delay={Math.min(index * 0.05, 0.2)}>
-                  <article className="border-line bg-surface shadow-card rounded-2xl border p-6">
+                  <article className="border-line bg-surface shadow-card rounded border p-6">
                     <div className="flex flex-wrap items-start justify-between gap-4">
                       <div className="flex min-w-0 gap-4">
-                        <span className="bg-accent-soft text-accent grid h-11 w-11 shrink-0 place-items-center rounded-xl">
+                        <span className="bg-accent-soft text-accent grid h-11 w-11 shrink-0 place-items-center rounded">
                           <Icon className="h-5 w-5" />
                         </span>
                         <div className="min-w-0">
@@ -108,12 +108,12 @@ export function ExperienceList() {
 
                       <div className="flex shrink-0 items-center gap-2">
                         {ongoing ? (
-                          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                          <span className="bg-accent-soft text-accent inline-flex items-center gap-1.5 rounded-sm px-2.5 py-1 text-xs font-semibold">
                             <span className="h-1.5 w-1.5 rounded-full bg-current" />
                             {t.experiences.current}
                           </span>
                         ) : null}
-                        <span className="border-line text-muted rounded-full border px-2.5 py-1 text-xs font-medium">
+                        <span className="border-line text-muted rounded-sm border px-2.5 py-1 text-xs font-medium">
                           {t.experiences.types[experience.type]}
                         </span>
                       </div>
@@ -167,9 +167,9 @@ function FilterButton({
       onClick={onClick}
       aria-pressed={active}
       className={classNames(
-        "rounded-lg border px-3 py-2 text-xs font-semibold transition-colors",
+        "rounded border px-3 py-2 text-xs font-semibold transition-colors",
         active
-          ? "border-accent bg-accent text-white"
+          ? "border-accent bg-accent text-on-accent"
           : "border-line bg-surface text-muted hover:text-fg hover:border-accent/40",
       )}
     >

@@ -12,7 +12,6 @@ export function ExperiencesView() {
     <Container as="section" className="py-16 sm:py-20">
       <SectionHeading
         as="h1"
-        eyebrow="04"
         title={t.experiences.title}
         subtitle={t.experiences.subtitle}
       />
