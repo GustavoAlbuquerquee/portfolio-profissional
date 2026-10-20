@@ -25,12 +25,12 @@ O nome é o `id` do projeto mais a extensão. Use o mesmo `id` de `src/data/proj
 | Primor Móveis | `primor-moveis.png` | `primor-moveis.gif` |
 | Arquiteck | `arquiteck.png` | `arquiteck.gif` |
 | Estagi.ON | `estagi-on.png` | `estagi-on.gif` |
-| Yesalyle | `yesalyle.png` | `yesalyle.gif` |
+| YesAgile | `yesagile.png` | `yesagile.gif` |
 | Vitalis | `vitalis.png` | `vitalis.gif` |
 
 Use **um** arquivo por projeto. Depois de colocar o arquivo, atualize o campo
 `image` do projeto em `src/data/projects.ts` (por exemplo
-`image: "/projects/yesalyle.gif",`). O script de validação (seção 5) mostra a
+`image: "/projects/yesagile.gif",`). O script de validação (seção 5) mostra a
 linha exata. Pode apagar o `.svg` antigo depois.
 
 ## 2. O que capturar em cada projeto
@@ -69,7 +69,7 @@ Dois lados do projeto: o site e a automação. O mais forte é mostrar os dois.
 - **Para somar com "login":** um GIF de ~12 s: tela de login, entrada, chegada
   na listagem, aplicação de um filtro. Cobre "login" e "interação" de uma vez.
 
-### Yesalyle (`yesalyle`) — GIF (prioridade)
+### YesAgile (`yesagile`) — GIF (prioridade)
 
 - **Cena:** conversa no WhatsApp com o agente conversacional (o aluno ou
   responsável pergunta algo, o agente responde), seguida de um corte para a
@@ -145,7 +145,7 @@ Se o GIF passar de 5 MB: reduza a duração, o FPS (12) ou a resolução
 - **Feche abas e extensões** visíveis. Se estiver fora do modo anônimo,
   esconda a barra de extensões. Capture só o conteúdo da página.
 - **Dados pessoais**: nada de nomes, telefones, e-mails, CPFs ou conversas de
-  clientes reais. Troque por dados fictícios ou borre. Na Primor e na Yesalyle,
+  clientes reais. Troque por dados fictícios ou borre. Na Primor e na YesAgile,
   revise conversas de WhatsApp com cuidado.
 - **Zoom do navegador consistente**: use **100%** (Ctrl+0) em todas as
   capturas, com a mesma janela/emulação de tamanho. Isso mantém tipografia e
@@ -176,11 +176,11 @@ colar em `src/data/projects.ts`. Ele não altera nenhum arquivo.
 ## 6. Checklist final
 
 - [ ] Cada um dos cinco projetos tem **um** arquivo em `public/projects/`.
-- [ ] Nomes exatos: `primor-moveis`, `arquiteck`, `estagi-on`, `yesalyle`, `vitalis` + `.png` ou `.gif`.
+- [ ] Nomes exatos: `primor-moveis`, `arquiteck`, `estagi-on`, `yesagile`, `vitalis` + `.png` ou `.gif`.
 - [ ] Proporção **16:10** em todos (o script mostra `16:10`).
 - [ ] PNG com **1600 x 1000** (ou mais, em 16:10); GIF com pelo menos 800 px de largura.
 - [ ] PNG até 800 KB e GIF até 5 MB.
-- [ ] Yesalyle e, se possível, Primor em **GIF** mostrando a interação.
+- [ ] YesAgile e, se possível, Primor em **GIF** mostrando a interação.
 - [ ] As telas mostram o sistema **funcionando**, com dados, sem erros nem telas vazias.
 - [ ] Sem dados pessoais reais, sem abas, extensões, favoritos ou barra de tarefas à mostra.
 - [ ] Mesmo zoom (100%) e mesmo tema em todas as capturas.

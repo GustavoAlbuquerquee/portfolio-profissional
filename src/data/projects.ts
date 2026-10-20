@@ -107,15 +107,15 @@ export const projects: Project[] = [
     image: "/projects/estagi-on.svg",
   },
   {
-    id: "yesalyle",
-    name: "Yesalyle",
+    id: "yesagile",
+    name: "YesAgile",
     startDate: "2026-07",
     endDate: "2026-09",
     category: "web",
     featured: true,
     description: {
-      pt: "Modernização do site da Yesalyle e criação de um agente conversacional que atende os alunos pelo WhatsApp. O agente consulta e atualiza a planilha de clientes e cursos em tempo real, respondendo dúvidas sem intervenção manual da equipe.",
-      en: "Modernisation of the Yesalyle website plus a conversational agent that serves students over WhatsApp. The agent reads and updates the client and course spreadsheet in real time, answering questions with no manual work from the team.",
+      pt: "Modernização do site da YesAgile e criação de um agente conversacional que atende os alunos pelo WhatsApp. O agente consulta e atualiza a planilha de clientes e cursos em tempo real, respondendo dúvidas sem intervenção manual da equipe.",
+      en: "Modernisation of the YesAgile website plus a conversational agent that serves students over WhatsApp. The agent reads and updates the client and course spreadsheet in real time, answering questions with no manual work from the team.",
     },
     highlights: {
       pt: [
@@ -130,7 +130,8 @@ export const projects: Project[] = [
       ],
     },
     technologies: ["React", "TypeScript", "n8n", "REST APIs", "Vercel"],
-    image: "/projects/yesalyle.svg",
+    demo: "https://yesagile.com.br",
+    image: "/projects/yesagile.jpg",
   },
   {
     id: "vitalis",
