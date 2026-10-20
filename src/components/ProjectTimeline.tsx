@@ -6,6 +6,7 @@ import { ArrowDownUp, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { TechBadge } from "./TechBadge";
 import { Reveal } from "./Reveal";
+import PixelTransition from "./reactbits/PixelTransition";
 import { useI18n } from "@/context/I18nProvider";
 import { projects, sortProjects, type ProjectCategory } from "@/data/projects";
 import { classNames, formatDuration, formatRange, monthSpan } from "@/lib/format";
@@ -105,23 +106,50 @@ export function ProjectTimeline() {
                           {CATEGORY_LABELS[project.category][locale]}
                         </p>
 
-                        <div className="mt-5 grid gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
-                          <div className="border-line bg-surface-2 relative aspect-16/10 overflow-hidden rounded-sm border">
-                            <Image
-                              src={asset(project.image)}
-                              alt={t.projects.screenshotAlt(project.name)}
-                              fill
-                              sizes="(max-width: 768px) 100vw, 32vw"
-                              className="object-cover"
-                            />
-                          </div>
+                        <div className="mt-5 space-y-6">
+                          {/* A captura se desfaz em pixels e revela a stack do projeto. */}
+                          <PixelTransition
+                            className="border-line bg-surface-2 w-full overflow-hidden rounded-sm border"
+                            aspectRatio="62.5%"
+                            gridSize={16}
+                            pixelColor="var(--accent)"
+                            animationStepDuration={0.4}
+                            trigger="hover"
+                            firstContent={
+                              <Image
+                                src={asset(project.image)}
+                                alt={t.projects.screenshotAlt(project.name)}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 32vw"
+                                className="object-cover"
+                              />
+                            }
+                            secondContent={
+                              <div className="bg-surface-2 flex h-full w-full flex-col justify-center gap-2 p-5">
+                                <p className="text-muted font-mono text-[10px] tracking-[0.15em] uppercase">
+                                  {t.projects.techs}
+                                </p>
+                                <ul className="flex flex-wrap gap-1.5">
+                                  {project.technologies.map((tech) => (
+                                    <li
+                                      key={tech}
+                                      className="border-line text-fg rounded-sm border px-2 py-1 font-mono text-[11px]"
+                                    >
+                                      {tech}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            }
+                          />
 
                           <div>
-                            <p className="text-muted text-sm leading-relaxed text-pretty">
+                            {/* Texto limitado em largura: linha longa demais cansa a leitura. */}
+                            <p className="text-muted max-w-[72ch] text-sm leading-relaxed text-pretty">
                               {tr(project.description)}
                             </p>
 
-                            <ul className="text-muted mt-4 space-y-1.5 text-sm">
+                            <ul className="text-muted mt-4 max-w-[72ch] space-y-1.5 text-sm">
                               {tr(project.highlights).map((highlight) => (
                                 <li key={highlight} className="flex gap-2.5">
                                   <span className="bg-accent mt-[9px] h-px w-2.5 shrink-0" />

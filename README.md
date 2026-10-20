@@ -145,6 +145,7 @@ As ferramentas, frameworks e bibliotecas abaixo foram utilizados na construção
 | [**Tailwind CSS**](https://tailwindcss.com/) | 4.x | Estilização utilitária e *design tokens* via `@theme` |
 | [**Motion**](https://motion.dev/) | 14.x | Animações de entrada, com respeito a `prefers-reduced-motion` |
 | [**Lucide React**](https://lucide.dev/) | 1.x | Biblioteca de ícones SVG |
+| [**React Bits**](https://reactbits.dev/) | — | Componentes de interação (`ClickSpark`, `DecryptedText`, `Magnet`, `PixelTransition`), em [`src/components/reactbits/`](./src/components/reactbits) |
 | [**React Hook Form**](https://react-hook-form.com/) | 7.x | Gerenciamento e validação do formulário de contato |
 
 ### 🖥️ Back-end
@@ -617,6 +618,7 @@ npm run build      # build de produção (falha em qualquer erro de tipo)
 * 📖 **Validação:** [Documentação do **Zod**](https://zod.dev/)
 * 📖 **Envio de e-mail:** [Documentação do **Nodemailer**](https://nodemailer.com/about/)
 * 📖 **Animações:** [Documentação do **Motion**](https://motion.dev/docs)
+* 📖 **Componentes de interação:** [**React Bits**](https://reactbits.dev/) — código de terceiros sob licença MIT + Commons Clause, mantido como veio da origem em [`src/components/reactbits/`](./src/components/reactbits), com o aviso de copyright preservado
 * 📖 **Hospedagem:** [Documentação da **Vercel**](https://vercel.com/docs) · [**GitHub Pages**](https://docs.github.com/pages)
 * 📖 **Acessibilidade:** [**WAI-ARIA Authoring Practices**](https://www.w3.org/WAI/ARIA/apg/)
 * 📖 **Guia de Estilo:** [**Conventional Commits**](https://www.conventionalcommits.org/pt-br/v1.0.0/)

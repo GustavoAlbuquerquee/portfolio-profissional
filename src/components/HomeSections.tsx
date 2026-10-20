@@ -9,6 +9,8 @@ import { Reveal } from "./Reveal";
 import { TechBadge } from "./TechBadge";
 import { RevLights } from "./RevLights";
 import { FlipStat } from "./FlipStat";
+import DecryptedText from "./reactbits/DecryptedText";
+import Magnet from "./reactbits/Magnet";
 import { useI18n } from "@/context/I18nProvider";
 import { profile } from "@/data/profile";
 import { skillGroups } from "@/data/skills";
@@ -34,7 +36,16 @@ export function Hero() {
 
             <p className="border-line text-muted mt-6 inline-flex items-center gap-2 rounded-sm border px-2.5 py-1 font-mono text-xs tracking-wide uppercase">
               <span className="bg-accent h-1.5 w-1.5 rounded-full" aria-hidden />
-              {tr(profile.availability)}
+              {/* O status decodifica na entrada, como um painel ligando. */}
+              <DecryptedText
+                text={tr(profile.availability)}
+                animateOn="view"
+                sequential
+                revealDirection="start"
+                speed={38}
+                maxIterations={12}
+                characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+              />
             </p>
 
             <h1 className="text-fg font-display mt-6 text-5xl font-bold tracking-tight text-balance sm:text-7xl">
@@ -46,13 +57,16 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/projetos"
-                className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
-              >
-                {t.home.ctaProjects}
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+              {/* A chamada principal responde ao cursor, como um botao de painel. */}
+              <Magnet padding={70} magnetStrength={6} maxOffset={9}>
+                <Link
+                  href="/projetos"
+                  className="bg-accent text-on-accent hover:bg-accent-2 inline-flex items-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"
+                >
+                  {t.home.ctaProjects}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </Magnet>
               <Link
                 href="/contato"
                 className="border-line bg-surface text-fg hover:border-accent hover:text-accent inline-flex items-center gap-2 rounded border px-5 py-2.5 text-sm font-semibold transition-colors active:translate-y-px"

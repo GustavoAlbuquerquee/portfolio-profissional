@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Codigo de terceiros (React Bits), mantido como veio da origem.
+    // Nao e lintado pelas regras do projeto para continuar atualizavel.
+    "src/components/reactbits/**",
   ]),
 ]);
 

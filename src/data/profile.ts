@@ -23,7 +23,7 @@ export const profile = {
     en: "Open to new opportunities",
   } satisfies Localized,
   /** Foto de perfil opcional em /public/img. Deixe null para usar as iniciais. */
-  avatar: null as string | null,
+  avatar: "/img/perfil.jpg" as string | null,
   /** Curriculo opcional em /public. Deixe null para esconder o botao. */
   resume: null as string | null,
 

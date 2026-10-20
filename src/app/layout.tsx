@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { I18nProvider } from "@/context/I18nProvider";
+import ClickSpark from "@/components/reactbits/ClickSpark";
 import { ThemeProvider, themeInitScript } from "@/context/ThemeProvider";
 import { profile } from "@/data/profile";
 
@@ -82,11 +83,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               Pular para o conteúdo / Skip to content
             </a>
-            <Header />
-            <main id="conteudo" className="flex-1">
-              {children}
-            </main>
-            <Footer />
+            {/* Faisca no clique: devolve resposta fisica a cada toque. */}
+            <ClickSpark
+              sparkColor="var(--accent)"
+              sparkCount={10}
+              sparkSize={9}
+              sparkRadius={18}
+              duration={420}
+            >
+              <Header />
+              <main id="conteudo" className="flex-1">
+                {children}
+              </main>
+              <Footer />
+            </ClickSpark>
           </I18nProvider>
         </ThemeProvider>
       </body>
