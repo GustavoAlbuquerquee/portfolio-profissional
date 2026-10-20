@@ -51,6 +51,8 @@ export const dictionaries = {
       orderNewest: "Mais recente primeiro",
       filterAll: "Todos",
       empty: "Nenhum projeto encontrado para este filtro.",
+      duration: "Duração",
+      order: "Ordem",
       screenshotAlt: (name: string) => `Captura de tela do projeto ${name}`,
     },
     experiences: {
@@ -61,6 +63,9 @@ export const dictionaries = {
       period: "Período",
       filterAll: "Todas",
       empty: "Nenhuma experiência encontrada para este filtro.",
+      stintTitle: "Mapa de passagens",
+      stintUnit: "passagens",
+      stintLegend: "Barra listrada indica passagem em curso.",
       types: {
         job: "Profissional",
         internship: "Estágio",
@@ -155,6 +160,8 @@ export const dictionaries = {
       orderNewest: "Newest first",
       filterAll: "All",
       empty: "No projects match this filter.",
+      duration: "Duration",
+      order: "Order",
       screenshotAlt: (name: string) => `Screenshot of the ${name} project`,
     },
     experiences: {
@@ -165,6 +172,9 @@ export const dictionaries = {
       period: "Period",
       filterAll: "All",
       empty: "No experience matches this filter.",
+      stintTitle: "Stint map",
+      stintUnit: "stints",
+      stintLegend: "A striped bar marks an ongoing stint.",
       types: {
         job: "Professional",
         internship: "Internship",

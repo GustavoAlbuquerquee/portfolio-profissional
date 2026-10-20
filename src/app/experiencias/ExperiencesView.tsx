@@ -3,6 +3,7 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ExperienceList } from "@/components/ExperienceList";
+import { StintChart } from "@/components/StintChart";
 import { useI18n } from "@/context/I18nProvider";
 
 export function ExperiencesView() {
@@ -15,6 +16,7 @@ export function ExperiencesView() {
         title={t.experiences.title}
         subtitle={t.experiences.subtitle}
       />
+      <StintChart />
       <ExperienceList />
     </Container>
   );

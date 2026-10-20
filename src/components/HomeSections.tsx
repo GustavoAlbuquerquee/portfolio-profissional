@@ -7,6 +7,8 @@ import { Container } from "./Container";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { TechBadge } from "./TechBadge";
+import { RevLights } from "./RevLights";
+import { FlipStat } from "./FlipStat";
 import { useI18n } from "@/context/I18nProvider";
 import { profile } from "@/data/profile";
 import { skillGroups } from "@/data/skills";
@@ -24,13 +26,13 @@ export function Hero() {
 
   return (
     <section className="border-line relative overflow-hidden border-b">
-      {/* Faixa de box no topo: divisor estrutural da secao. */}
-      <div className="pit-stripe h-1 w-full opacity-80" aria-hidden />
-
       <Container className="py-16 sm:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_1fr]">
           <div>
-            <p className="border-line text-muted inline-flex items-center gap-2 rounded-sm border px-2.5 py-1 font-mono text-xs tracking-wide uppercase">
+            {/* Regua de largada: acende na chegada da pagina. */}
+            <RevLights />
+
+            <p className="border-line text-muted mt-6 inline-flex items-center gap-2 rounded-sm border px-2.5 py-1 font-mono text-xs tracking-wide uppercase">
               <span className="bg-accent h-1.5 w-1.5 rounded-full" aria-hidden />
               {tr(profile.availability)}
             </p>
@@ -108,13 +110,17 @@ export function Hero() {
         </div>
 
         {/* Indicadores em tira, separados por fio, sem caixas de card. */}
+        {/* Placar: cada indicador sai em celulas avulsas, como placa de estadio. */}
         <dl className="border-line divide-line mt-14 grid border-t border-b sm:grid-cols-3 sm:divide-x">
-          {profile.highlights.map((item) => (
-            <div key={item.value} className="border-line border-b py-5 last:border-b-0 sm:border-b-0">
-              <dt className="text-fg font-display tabular text-4xl font-bold tracking-tight">
-                {item.value}
+          {profile.highlights.map((item, index) => (
+            <div
+              key={item.value}
+              className="border-line border-b py-6 last:border-b-0 sm:border-b-0 sm:px-6 sm:first:pl-0"
+            >
+              <dt>
+                <FlipStat value={item.value} delay={0.25 + index * 0.12} />
               </dt>
-              <dd className="text-muted mt-1 font-mono text-[11px] tracking-[0.12em] uppercase">
+              <dd className="text-muted mt-3 font-mono text-[11px] tracking-[0.12em] uppercase">
                 {tr(item.label)}
               </dd>
             </div>
