@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
+import { GithubIcon, InstagramIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { Reveal } from "./Reveal";
 import { useI18n } from "@/context/I18nProvider";
 import { socials, type SocialKey } from "@/data/profile";
@@ -12,7 +12,7 @@ const ICONS: Record<SocialKey, React.ComponentType<{ className?: string }>> = {
   whatsapp: WhatsappIcon,
   linkedin: LinkedinIcon,
   github: GithubIcon,
-  instagram: GithubIcon,
+  instagram: InstagramIcon,
 };
 
 export function ContactChannels() {

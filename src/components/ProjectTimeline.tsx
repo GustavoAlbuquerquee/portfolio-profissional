@@ -133,15 +133,17 @@ export function ProjectTimeline() {
                       </div>
 
                       <div className="mt-6 flex flex-wrap gap-3">
-                        <a
-                          href={project.repository}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          className="border-line bg-surface-2 text-fg hover:border-accent/60 hover:text-accent inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-semibold transition-colors"
-                        >
-                          <GithubIcon className="h-4 w-4" />
-                          {t.projects.repository}
-                        </a>
+                        {project.repository ? (
+                          <a
+                            href={project.repository}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="border-line bg-surface-2 text-fg hover:border-accent/60 hover:text-accent inline-flex items-center gap-2 rounded-lg border px-3.5 py-2 text-xs font-semibold transition-colors"
+                          >
+                            <GithubIcon className="h-4 w-4" />
+                            {t.projects.repository}
+                          </a>
+                        ) : null}
                         {project.demo ? (
                           <a
                             href={project.demo}

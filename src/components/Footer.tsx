@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowUp, Mail } from "lucide-react";
 import { Container } from "./Container";
-import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
+import { GithubIcon, InstagramIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { useI18n } from "@/context/I18nProvider";
 import { profile, socials, type SocialKey } from "@/data/profile";
 
@@ -12,7 +12,7 @@ const ICONS: Record<SocialKey, React.ComponentType<{ className?: string }>> = {
   whatsapp: WhatsappIcon,
   linkedin: LinkedinIcon,
   github: GithubIcon,
-  instagram: GithubIcon,
+  instagram: InstagramIcon,
 };
 
 export function Footer() {

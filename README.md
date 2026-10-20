@@ -21,7 +21,7 @@
 </table>
 
 > [!IMPORTANT]
-> **Ainda falta preencher:** o **LinkedIn** (`linkedin.com/in/seu-usuario`) e o **WhatsApp** (`+55 (31) 90000-0000`) em `src/data/profile.ts` → `socials`, e o **link da demo online** nos *Links Úteis* após o primeiro deploy. Os projetos e as experiências em `src/data/` são exemplos — substitua pelos reais.
+> **Ainda falta preencher:** o **link da demo online** e o **link do protótipo no Figma** nos *Links Úteis*, e as **capturas reais** dos projetos em `public/projects/` — as imagens atuais são mockups temporários.
 
 ---
 
@@ -399,10 +399,11 @@ portfolio-profissional/
 │
 ├── public/
 │   ├── projects/                      # Imagens/GIFs dos projetos em funcionamento
-│   │   ├── jogo-da-memoria.svg
-│   │   ├── api-biblioteca.svg
-│   │   ├── dashboard-financeiro.svg
-│   │   ├── sistema-agendamento.svg
+│   │   ├── primor-moveis.svg
+│   │   ├── arquiteck.svg
+│   │   ├── estagi-on.svg
+│   │   ├── yesalyle.svg
+│   │   ├── vitalis.svg
 │   │   └── portfolio-profissional.svg
 │   └── img/                           # Foto de perfil, currículo e outros assets
 │
@@ -626,7 +627,7 @@ npm run build      # build de produção (falha em qualquer erro de tipo)
 
 | 👤 Nome | :octocat: GitHub | 💼 LinkedIn | 📤 Gmail |
 |---------|------------------|-------------|----------|
-| Gustavo Albuquerque | <div align="center"><a href="https://github.com/GustavoAlbuquerquee"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/seu-usuario"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:gustavoalbuquerque807@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
+| Gustavo Albuquerque | <div align="center"><a href="https://github.com/GustavoAlbuquerquee"><img src="https://joaopauloaramuni.github.io/image/github6.png" width="50px" height="50px"></a></div> | <div align="center"><a href="https://www.linkedin.com/in/gustavo-albuquerque-6574402b4"><img src="https://joaopauloaramuni.github.io/image/linkedin2.png" width="50px" height="50px"></a></div> | <div align="center"><a href="mailto:gustavoalbuquerque807@gmail.com"><img src="https://joaopauloaramuni.github.io/image/gmail3.png" width="50px" height="50px"></a></div> |
 
 **Disciplina:** Desenvolvimento e Integração de Aplicações Web (DIAW)
 **Curso:** Engenharia de Software — PUC Minas
