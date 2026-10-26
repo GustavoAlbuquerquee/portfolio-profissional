@@ -108,7 +108,7 @@ export function StintChart() {
 
             <div className="relative h-8" aria-hidden>
               <motion.div
-                className="absolute top-0 flex h-8 origin-left items-center overflow-hidden rounded-sm"
+                className="absolute top-0 flex h-8 origin-left items-center justify-center overflow-hidden rounded-sm"
                 style={{
                   left: `${linha.esquerda}%`,
                   width: `${linha.largura}%`,
@@ -130,6 +130,8 @@ export function StintChart() {
                   <span className="pit-stripe absolute inset-y-0 right-0 w-6 opacity-90" />
                 ) : null}
 
+                {/* Rotulo centralizado. Na passagem em curso, o respiro maior a direita
+                    centraliza o nome na parte cheia, sem invadir a ponta listrada. */}
                 <span
                   className={classNames(
                     "text-on-accent relative truncate py-1 pl-2.5 font-mono text-[11px] font-semibold tracking-wide",

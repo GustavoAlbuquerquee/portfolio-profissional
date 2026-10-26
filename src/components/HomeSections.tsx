@@ -267,11 +267,16 @@ export function SkillsSection() {
           </p>
         </div>
       ) : (
-        /* Setores da stack: fio divisorio no lugar de caixa de card. */
-        <div className="border-line divide-line mt-6 grid border-t md:grid-cols-2 md:divide-x">
+        /* Setores da stack: fio divisorio no lugar de caixa de card. A coluna sai do
+           indice: cada setor fica dentro do proprio Reveal, onde `first:` sempre casa. */
+        <div className="border-line mt-6 grid border-t md:grid-cols-2">
           {gruposVisiveis.map((group, index) => (
             <Reveal key={group.id} delay={index * 0.05}>
-              <div className="border-line h-full border-b py-6 md:px-6 md:first:pl-0">
+              <div
+                className={`border-line h-full border-b py-6 ${
+                  index % 2 === 0 ? "md:pr-6" : "md:border-l md:pl-6"
+                }`}
+              >
                 <div className="flex items-baseline gap-3">
                   <span className="text-accent font-mono text-[11px] tracking-[0.15em] uppercase">
                     {tr(group.title)}
