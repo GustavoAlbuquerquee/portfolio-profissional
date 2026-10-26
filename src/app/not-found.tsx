@@ -9,7 +9,7 @@ export default function NotFound() {
   const { t } = useI18n();
 
   return (
-    <Container className="grid min-h-[60vh] place-items-center py-20 text-center">
+    <Container className="grid min-h-[60svh] place-items-center py-20 text-center">
       <div>
         <p className="text-accent font-mono text-6xl font-bold">404</p>
         <h1 className="text-fg mt-4 text-2xl font-semibold tracking-tight">{t.notFound.title}</h1>

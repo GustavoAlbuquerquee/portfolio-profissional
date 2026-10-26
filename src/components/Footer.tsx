@@ -6,6 +6,7 @@ import { Container } from "./Container";
 import { GithubIcon, InstagramIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 import { useI18n } from "@/context/I18nProvider";
 import { profile, socials, type SocialKey } from "@/data/profile";
+import { EVENTO_ALTERNAR } from "./ArcadeMode";
 
 const ICONS: Record<SocialKey, React.ComponentType<{ className?: string }>> = {
   email: Mail,
@@ -82,9 +83,21 @@ export function Footer() {
         </div>
 
         <div className="border-line mt-10 flex flex-col items-start justify-between gap-4 border-t pt-6 sm:flex-row sm:items-center">
-          <p className="text-muted text-xs">
-            © {new Date().getFullYear()} {profile.name}. {t.footer.rights} {t.footer.builtWith}.
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-muted text-xs">
+              © {new Date().getFullYear()} {profile.name}. {t.footer.rights} {t.footer.builtWith}.
+            </p>
+            {/* Dica do Codigo Konami. Tocar aqui liga o modo para quem nao tem teclado. */}
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(EVENTO_ALTERNAR))}
+              aria-label={t.arcade.hint}
+              title={t.arcade.hint}
+              className="text-muted/60 hover:text-accent w-fit font-mono text-[11px] tracking-[0.2em] pressable"
+            >
+              ↑↑↓↓←→←→BA
+            </button>
+          </div>
           <button
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

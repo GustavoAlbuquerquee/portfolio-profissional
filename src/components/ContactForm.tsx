@@ -82,6 +82,7 @@ export function ContactForm() {
             id="name"
             type="text"
             autoComplete="name"
+            autoCapitalize="words"
             placeholder={t.contact.namePlaceholder}
             aria-invalid={Boolean(errors.name)}
             className={inputClass(Boolean(errors.name))}
@@ -98,6 +99,9 @@ export function ContactForm() {
             id="email"
             type="email"
             autoComplete="email"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
             placeholder={t.contact.emailPlaceholder}
             aria-invalid={Boolean(errors.email)}
             className={inputClass(Boolean(errors.email))}
@@ -191,7 +195,7 @@ export function ContactForm() {
 
 function inputClass(hasError: boolean) {
   return classNames(
-    "border-line bg-surface-2 text-fg placeholder:text-muted/70 w-full rounded border px-3.5 py-2.5 text-sm pressable",
+    "border-line bg-surface-2 text-fg placeholder:text-muted/70 w-full rounded border px-3.5 py-2.5 text-base transition-colors pointer-fine:text-sm",
     "focus:border-accent focus:outline-none",
     hasError && "border-red-500/70",
   );

@@ -22,6 +22,11 @@ const themeStore = createPersistedStore<Theme>({
   apply: (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
     document.documentElement.style.colorScheme = theme;
+    // A cor da barra de status segue o tema escolhido, nao so o do sistema.
+    const cor = theme === "dark" ? "#0b0b0c" : "#f4f4f2";
+    document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+      meta.setAttribute("content", cor);
+    });
   },
 });
 

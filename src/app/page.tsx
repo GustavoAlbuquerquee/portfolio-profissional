@@ -1,5 +1,6 @@
 import { AboutSection, Hero, SkillsSection } from "@/components/HomeSections";
 import { PitWall } from "@/components/PitWall";
+import { CodeTelemetry } from "@/components/CodeTelemetry";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <PitWall />
+      <CodeTelemetry />
     </>
   );
 }

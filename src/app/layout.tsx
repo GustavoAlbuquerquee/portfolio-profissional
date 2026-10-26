@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, JetBrains_Mono, Space_Grotesk, VT323 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { I18nProvider } from "@/context/I18nProvider";
 import ClickSpark from "@/components/reactbits/ClickSpark";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ArcadeMode } from "@/components/ArcadeMode";
 import { ThemeProvider, themeInitScript } from "@/context/ThemeProvider";
 import { profile } from "@/data/profile";
 
@@ -23,6 +24,16 @@ const geist = Geist({
   display: "swap",
 });
 
+/* Fonte de terminal pixelada do modo fliperama. Sem preload: o arquivo so
+   e baixado se alguem ligar o modo, entao nao pesa para o resto. */
+const vt323 = VT323({
+  variable: "--font-vt323",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+});
+
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
@@ -30,6 +41,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  /* Base dos links absolutos (Open Graph e afins): o dominio proprio. */
+  metadataBase: new URL("https://albuquerquee.dev"),
   title: {
     default: `${profile.name} — ${profile.role.pt}`,
     template: `%s · ${profile.name}`,
@@ -49,6 +62,7 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name }],
   openGraph: {
     type: "website",
+    url: "/",
     title: `${profile.name} — ${profile.role.pt}`,
     description: profile.headline.pt,
     locale: "pt_BR",
@@ -59,6 +73,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  interactiveWidget: "resizes-content",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f4f4f2" },
     { media: "(prefers-color-scheme: dark)", color: "#0b0b0c" },
@@ -70,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${geist.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${geist.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${vt323.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
@@ -93,6 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               duration={420}
             >
               <ScrollProgress />
+              <ArcadeMode />
               <Header />
               <main id="conteudo" className="flex-1">
                 {children}

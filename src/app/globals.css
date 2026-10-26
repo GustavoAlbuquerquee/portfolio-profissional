@@ -56,6 +56,7 @@
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+  --font-pixel: var(--font-vt323), ui-monospace, monospace;
 
   --radius-card: var(--radius);
   --shadow-card: var(--shadow);
@@ -90,6 +91,28 @@
 
 html {
   scroll-behavior: smooth;
+  /* Sem o flash cinza/azul que o navegador pinta ao tocar: cada controle
+     ja tem o proprio :active (.pressable). */
+  -webkit-tap-highlight-color: transparent;
+  /* Sem inflar a fonte ao girar o celular para paisagem. */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Clique imediato, sem a espera do toque duplo, em tudo que se toca. */
+button,
+a,
+[role="button"],
+label[for] {
+  touch-action: manipulation;
+}
+
+/* Segurar o dedo num controle nao seleciona o rotulo. Texto de conteudo
+   continua selecionavel: a regra vale so para controles. */
+button,
+[role="button"],
+.pressable {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -122,6 +145,61 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: var(--radius);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+ * Modo fliperama (Codigo Konami). O @theme inline copia o valor das fontes
+ * direto nas classes, entao a troca e feita nas variaveis de origem que o
+ * next/font define no <html>; html[data-arcade] vence a classe do next/font.
+ * ────────────────────────────────────────────────────────────────────────── */
+html[data-arcade="on"] {
+  --font-space-grotesk: var(--font-vt323);
+  --font-jetbrains: var(--font-vt323);
+}
+
+html[data-arcade="on"] :is(h1, h2, h3) {
+  letter-spacing: 0.02em;
+  /* Brilho de fosforo, como texto em tubo de imagem. */
+  text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 55%, transparent);
+}
+
+/* Linhas de varredura e vinheta de tubo, por cima de tudo, sem bloquear clique. */
+html[data-arcade="on"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 75;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 58%, rgb(0 0 0 / 0.42) 100%);
+  animation: arcade-cintilar 5s steps(40) infinite;
+}
+
+@keyframes arcade-cintilar {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.86;
+  }
+}
+
+/* Aviso entra rapido, de cima, sem surgir do nada (escala parte de 0.96). */
+.arcade-aviso {
+  animation: arcade-entrar 220ms var(--ease-snap) both;
+}
+
+@keyframes arcade-entrar {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

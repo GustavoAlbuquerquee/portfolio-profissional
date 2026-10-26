@@ -134,6 +134,38 @@ export const dictionaries = {
       source: "Dados da Jolpica F1 API, atualizados a cada hora.",
       unavailable: "Os dados de corrida estão indisponíveis agora. Tente de novo mais tarde.",
     },
+    arcade: {
+      on: "Modo fliperama ligado. Esc para sair.",
+      off: "Modo fliperama desligado.",
+      hint: "Código Konami: liga o modo fliperama",
+    },
+    code: {
+      title: "Telemetria de código",
+      subtitle:
+        "Minha atividade no GitHub no último ano, buscada pelo servidor e atualizada a cada hora.",
+      contributions: "contribuições no último ano",
+      currentStreak: "Sequência atual",
+      longestStreak: "Maior sequência",
+      bestDay: "Melhor dia",
+      day: "dia",
+      days: "dias",
+      repos: "repositórios",
+      stars: "estrelas",
+      followers: "seguidores",
+      languages: "Linguagens nos repositórios",
+      less: "Menos",
+      more: "Mais",
+      cellTitle: (total: number, data: string) =>
+        total === 0
+          ? `Nenhuma contribuição em ${data}`
+          : `${total} ${total === 1 ? "contribuição" : "contribuições"} em ${data}`,
+      profile: "Ver perfil",
+      source: "Dados do GitHub, atualizados a cada hora.",
+      unavailable: "Os dados do GitHub estão indisponíveis agora. Tente de novo mais tarde.",
+      wakaTitle: "Últimos 7 dias no editor",
+      wakaTotal: "Programando",
+      wakaDaily: "Média por dia",
+    },
     notFound: {
       title: "Página não encontrada",
       description: "O endereço que você tentou acessar não existe neste portfólio.",
@@ -268,6 +300,37 @@ export const dictionaries = {
       wins: "wins",
       source: "Data from the Jolpica F1 API, refreshed hourly.",
       unavailable: "Race data is unavailable right now. Please try again later.",
+    },
+    arcade: {
+      on: "Arcade mode on. Press Esc to exit.",
+      off: "Arcade mode off.",
+      hint: "Konami Code: turns on arcade mode",
+    },
+    code: {
+      title: "Code telemetry",
+      subtitle: "My GitHub activity over the past year, fetched server-side and refreshed hourly.",
+      contributions: "contributions in the last year",
+      currentStreak: "Current streak",
+      longestStreak: "Longest streak",
+      bestDay: "Best day",
+      day: "day",
+      days: "days",
+      repos: "repositories",
+      stars: "stars",
+      followers: "followers",
+      languages: "Languages across repositories",
+      less: "Less",
+      more: "More",
+      cellTitle: (total: number, data: string) =>
+        total === 0
+          ? `No contributions on ${data}`
+          : `${total} ${total === 1 ? "contribution" : "contributions"} on ${data}`,
+      profile: "View profile",
+      source: "Data from GitHub, refreshed hourly.",
+      unavailable: "GitHub data is unavailable right now. Please try again later.",
+      wakaTitle: "Last 7 days in the editor",
+      wakaTotal: "Coding",
+      wakaDaily: "Daily average",
     },
     notFound: {
       title: "Page not found",
