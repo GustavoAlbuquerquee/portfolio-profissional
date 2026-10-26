@@ -8,8 +8,8 @@ export default function HomePage() {
       <Hero />
       <AboutSection />
       <SkillsSection />
-      <PitWall />
       <CodeTelemetry />
+      <PitWall />
     </>
   );
 }
