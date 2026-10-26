@@ -103,8 +103,9 @@ export const projects: Project[] = [
         "Development tasks organised through GitHub issues",
       ],
     },
-    technologies: ["React", "TypeScript", "Figma", "GitHub"],
-    image: "/projects/estagi-on.svg",
+    technologies: ["HTML5", "CSS3", "JavaScript", "JSON Server", "Figma"],
+    repository: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0427200-estagi-on",
+    image: "/projects/estagi-on.jpg",
   },
   {
     id: "yesagile",
@@ -155,9 +156,9 @@ export const projects: Project[] = [
         "TypeScript codebase organised to be testable and extensible module by module",
       ],
     },
-    technologies: ["TypeScript", "Node.js", "Arquitetura em camadas"],
+    technologies: ["React", "TypeScript", "Vite", "React Router", "Arquitetura em camadas"],
     repository: "https://github.com/GustavoAlbuquerquee/vitalis",
-    image: "/projects/vitalis.svg",
+    image: "/projects/vitalis.jpg",
   },
   {
     id: "portfolio-profissional",

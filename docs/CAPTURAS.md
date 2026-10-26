@@ -2,18 +2,19 @@
 
 O enunciado do Laboratório 01 pede, para cada projeto da linha do tempo, uma
 "imagem ou GIF com o projeto em funcionamento (telas, login, interações)".
-Hoje `public/projects/` contém mockups SVG genéricos. Este guia explica como
-trocá-los por capturas reais, todas no mesmo padrão.
+Todas as imagens de `public/projects/` já são capturas reais (JPEG 1600 x 1000,
+16:10). Este guia fica como referência para trocar ou atualizar uma delas
+mantendo o mesmo padrão.
 
 ## 1. Especificação técnica (vale para todos)
 
 | Item | Valor |
 | --- | --- |
 | Proporção | **16:10** (o card do site usa `aspect-16/10` com `object-cover`; outra proporção é cortada) |
-| Resolução alvo | **1600 x 1000 px** (o dobro dos mockups de 800x500, nítido em telas retina) |
-| Imagem estática | **PNG** |
+| Resolução alvo | **1600 x 1000 px** (nítido em telas retina) |
+| Imagem estática | **JPEG** (qualidade 88, progressivo) ou PNG |
 | Interação | **GIF** animado (pode ser menor que o alvo, desde que 16:10: 1280x800 ou 1200x750) |
-| Peso máximo sugerido | PNG até **800 KB**; GIF até **5 MB** (idealmente 3 MB) |
+| Peso máximo sugerido | JPEG até **500 KB**; PNG até **800 KB**; GIF até **5 MB** (idealmente 3 MB) |
 | Local | `public/projects/` |
 
 ### Nome exato dos arquivos
@@ -22,16 +23,17 @@ O nome é o `id` do projeto mais a extensão. Use o mesmo `id` de `src/data/proj
 
 | Projeto | Estático | Se for GIF |
 | --- | --- | --- |
-| Primor Móveis | `primor-moveis.png` | `primor-moveis.gif` |
-| Arquiteck | `arquiteck.png` | `arquiteck.gif` |
-| Estagi.ON | `estagi-on.png` | `estagi-on.gif` |
-| YesAgile | `yesagile.png` | `yesagile.gif` |
-| Vitalis | `vitalis.png` | `vitalis.gif` |
+| Primor Móveis | `primor-moveis.jpg` | `primor-moveis.gif` |
+| Arquiteck | `arquiteck.jpg` | `arquiteck.gif` |
+| Estagi.ON | `estagi-on.jpg` | `estagi-on.gif` |
+| YesAgile | `yesagile.jpg` | `yesagile.gif` |
+| Vitalis | `vitalis.jpg` | `vitalis.gif` |
 
 Use **um** arquivo por projeto. Depois de colocar o arquivo, atualize o campo
 `image` do projeto em `src/data/projects.ts` (por exemplo
 `image: "/projects/yesagile.gif",`). O script de validação (seção 5) mostra a
-linha exata. Pode apagar o `.svg` antigo depois.
+linha exata. Se a extensão mudar (de `.jpg` para `.gif`, por exemplo), apague o
+arquivo antigo.
 
 ## 2. O que capturar em cada projeto
 
@@ -92,7 +94,7 @@ Dois lados do projeto: o site e a automação. O mais forte é mostrar os dois.
 - **Dica:** use pacientes fictícios. Nunca dados de pessoas reais.
 
 > O projeto `portfolio-profissional` (o próprio site) também tem uma imagem. Se
-> quiser trocá-la, siga a mesma especificação com o nome `portfolio-profissional.png`.
+> quiser trocá-la, siga a mesma especificação com o nome `portfolio-profissional.jpg`.
 > A página inicial em modo claro ou escuro já serve.
 
 ## 3. Como capturar no Windows 11
@@ -176,10 +178,10 @@ colar em `src/data/projects.ts`. Ele não altera nenhum arquivo.
 ## 6. Checklist final
 
 - [ ] Cada um dos cinco projetos tem **um** arquivo em `public/projects/`.
-- [ ] Nomes exatos: `primor-moveis`, `arquiteck`, `estagi-on`, `yesagile`, `vitalis` + `.png` ou `.gif`.
+- [ ] Nomes exatos: `primor-moveis`, `arquiteck`, `estagi-on`, `yesagile`, `vitalis` + `.jpg`, `.png` ou `.gif`.
 - [ ] Proporção **16:10** em todos (o script mostra `16:10`).
-- [ ] PNG com **1600 x 1000** (ou mais, em 16:10); GIF com pelo menos 800 px de largura.
-- [ ] PNG até 800 KB e GIF até 5 MB.
+- [ ] JPEG ou PNG com **1600 x 1000** (ou mais, em 16:10); GIF com pelo menos 800 px de largura.
+- [ ] JPEG até 500 KB, PNG até 800 KB e GIF até 5 MB.
 - [ ] YesAgile e, se possível, Primor em **GIF** mostrando a interação.
 - [ ] As telas mostram o sistema **funcionando**, com dados, sem erros nem telas vazias.
 - [ ] Sem dados pessoais reais, sem abas, extensões, favoritos ou barra de tarefas à mostra.

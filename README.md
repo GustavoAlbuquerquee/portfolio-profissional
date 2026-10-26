@@ -21,7 +21,7 @@
 </table>
 
 > [!IMPORTANT]
-> **Ainda falta preencher:** o **link do protótipo no Figma** nos *Links Úteis*, e a **captura real** de dois projetos (`estagi-on` e `vitalis`), que ainda não têm URL pública. Rode `node scripts/valida-capturas.mjs` para ver a situação de cada um.
+> **Ainda falta preencher:** o **link do protótipo no Figma** nos *Links Úteis*. As imagens dos seis projetos já são capturas reais; `node scripts/valida-capturas.mjs` confere proporção e peso de cada uma.
 
 ---
 
@@ -403,12 +403,12 @@ portfolio-profissional/
 │
 ├── public/
 │   ├── projects/                      # Imagens/GIFs dos projetos em funcionamento
-│   │   ├── primor-moveis.jpg              # captura real
+│   │   ├── primor-moveis.jpg             # captura real
 │   │   ├── arquiteck.jpg                 # captura real
+│   │   ├── estagi-on.jpg                 # captura real, rodando localmente
 │   │   ├── yesagile.jpg                  # captura real
-│   │   ├── portfolio-profissional.jpg    # captura real
-│   │   ├── estagi-on.svg                 # mockup, aguardando captura
-│   │   └── vitalis.svg                   # mockup, aguardando captura
+│   │   ├── vitalis.jpg                   # captura real, rodando localmente
+│   │   └── portfolio-profissional.jpg    # captura real
 │   └── img/                           # Foto de perfil, currículo e outros assets
 │
 ├── src/
