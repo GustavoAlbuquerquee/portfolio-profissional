@@ -1,14 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Globe, List } from "lucide-react";
 import { Container } from "./Container";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { TechBadge } from "./TechBadge";
 import { RevLights } from "./RevLights";
 import { FlipStat } from "./FlipStat";
+import { SpeedLines } from "./SpeedLines";
+import { StackGlobe } from "./StackGlobe";
 import DecryptedText from "./reactbits/DecryptedText";
 import Magnet from "./reactbits/Magnet";
 import { useI18n } from "@/context/I18nProvider";
@@ -28,7 +31,10 @@ export function Hero() {
 
   return (
     <section className="border-line relative overflow-hidden border-b">
-      <Container className="py-16 sm:py-24">
+      {/* Fundo: linhas de velocidade saindo do ponto de fuga. */}
+      <SpeedLines />
+
+      <Container className="relative py-16 sm:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_1fr]">
           <div>
             {/* Regua de largada: acende na chegada da pagina. */}
@@ -202,35 +208,120 @@ export function AboutSection() {
 
 export function SkillsSection() {
   const { t, tr } = useI18n();
+  const [vista, setVista] = useState<"globo" | "lista">("globo");
+  const [grupo, setGrupo] = useState<string>("all");
+
+  const total = skillGroups.reduce((soma, g) => soma + g.items.length, 0);
+  const gruposVisiveis = grupo === "all" ? skillGroups : skillGroups.filter((g) => g.id === grupo);
 
   return (
     <Container as="section" id="habilidades" className="py-10">
       <SectionHeading title={t.home.skillsTitle} subtitle={t.home.skillsSubtitle} />
 
-      {/* Setores da stack: fio divisorio no lugar de caixa de card. */}
-      <div className="border-line divide-line mt-10 grid border-t md:grid-cols-2 md:divide-x">
-        {skillGroups.map((group, index) => (
-          <Reveal key={group.id} delay={index * 0.05}>
-            <div className="border-line h-full border-b py-6 md:px-6 md:first:pl-0">
-              <div className="flex items-baseline gap-3">
-                <span className="text-accent font-mono text-[11px] tracking-[0.15em] uppercase">
-                  {tr(group.title)}
-                </span>
-                <span className="text-muted tabular font-mono text-[11px]">
-                  {group.items.length}
-                </span>
-              </div>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li key={item}>
-                    <TechBadge>{item}</TechBadge>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        ))}
+      <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
+        {/* Filtro por setor: no globo apaga os outros, na lista esconde. */}
+        <div role="group" aria-label={t.home.skillsTitle} className="flex flex-wrap gap-2">
+          <ChipSetor ativo={grupo === "all"} onClick={() => setGrupo("all")} contagem={total}>
+            {t.stack.all}
+          </ChipSetor>
+          {skillGroups.map((g) => (
+            <ChipSetor
+              key={g.id}
+              ativo={grupo === g.id}
+              onClick={() => setGrupo(g.id)}
+              contagem={g.items.length}
+            >
+              {tr(g.title)}
+            </ChipSetor>
+          ))}
+        </div>
+
+        <div className="border-line bg-surface inline-flex rounded border p-0.5" role="group">
+          {(
+            [
+              { id: "globo", rotulo: t.stack.globe, Icone: Globe },
+              { id: "lista", rotulo: t.stack.list, Icone: List },
+            ] as const
+          ).map(({ id, rotulo, Icone }) => (
+            <button
+              key={id}
+              type="button"
+              aria-pressed={vista === id}
+              onClick={() => setVista(id)}
+              className={`pressable inline-flex items-center gap-1.5 rounded-sm px-3 py-1.5 text-xs font-semibold ${
+                vista === id ? "bg-accent text-on-accent" : "text-muted hover:text-fg"
+              }`}
+            >
+              <Icone className="h-3.5 w-3.5" aria-hidden />
+              {rotulo}
+            </button>
+          ))}
+        </div>
       </div>
+
+      {vista === "globo" ? (
+        <div className="mt-6">
+          <StackGlobe grupoAtivo={grupo} />
+          <p className="text-muted mt-2 text-center font-mono text-[10px] tracking-[0.15em] uppercase">
+            {t.stack.hint}
+          </p>
+        </div>
+      ) : (
+        /* Setores da stack: fio divisorio no lugar de caixa de card. */
+        <div className="border-line divide-line mt-6 grid border-t md:grid-cols-2 md:divide-x">
+          {gruposVisiveis.map((group, index) => (
+            <Reveal key={group.id} delay={index * 0.05}>
+              <div className="border-line h-full border-b py-6 md:px-6 md:first:pl-0">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-accent font-mono text-[11px] tracking-[0.15em] uppercase">
+                    {tr(group.title)}
+                  </span>
+                  <span className="text-muted tabular font-mono text-[11px]">
+                    {group.items.length}
+                  </span>
+                </div>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <li key={item}>
+                      <TechBadge>{item}</TechBadge>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      )}
     </Container>
+  );
+}
+
+function ChipSetor({
+  ativo,
+  onClick,
+  contagem,
+  children,
+}: {
+  ativo: boolean;
+  onClick: () => void;
+  contagem: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={ativo}
+      className={`pressable inline-flex items-center gap-2 rounded border px-3 py-1.5 text-xs font-semibold ${
+        ativo
+          ? "border-accent bg-accent text-on-accent"
+          : "border-line bg-surface text-muted hover:text-fg hover:border-accent"
+      }`}
+    >
+      {children}
+      <span className={`tabular font-mono text-[10px] ${ativo ? "opacity-80" : "text-muted"}`}>
+        {contagem}
+      </span>
+    </button>
   );
 }

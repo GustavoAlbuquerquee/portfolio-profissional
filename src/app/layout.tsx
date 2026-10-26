@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { I18nProvider } from "@/context/I18nProvider";
 import ClickSpark from "@/components/reactbits/ClickSpark";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { ThemeProvider, themeInitScript } from "@/context/ThemeProvider";
 import { profile } from "@/data/profile";
 
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               sparkRadius={18}
               duration={420}
             >
+              <ScrollProgress />
               <Header />
               <main id="conteudo" className="flex-1">
                 {children}

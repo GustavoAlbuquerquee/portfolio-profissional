@@ -104,6 +104,9 @@
 - 🗂️ **Projetos com linha do tempo:** ordenação cronológica (do mais antigo ao mais recente, com botão para inverter), filtro por categoria e, em cada projeto, nome, descrição, destaques, **tecnologias utilizadas**, **link para o repositório no GitHub** e **imagem do projeto em funcionamento**.
 - 💼 **Experiências:** experiências profissionais, estágios, freelas, projetos open source e eventos técnicos, com empresa/instituição, cargo ou atividade, período, local, descrição e realizações. Filtro por tipo e selo de "Atual".
 - 📬 **Contato:** ícones clicáveis para e-mail, WhatsApp, LinkedIn e GitHub, com botão de copiar, mais um **formulário funcional** (nome, e-mail, assunto e mensagem) que envia a mensagem por e-mail.
+- 🌐 **Globo de stacks:** as tecnologias distribuídas numa esfera pela espiral de Fibonacci, com os logos oficiais das marcas, perspectiva real (o que está na frente cresce e ganha nitidez), giro automático, arraste com inércia e filtro por área. Alterna com uma visão em lista, que é também o caminho acessível.
+- 🏁 **Box ao vivo:** resultado real da última corrida de Fórmula 1 e o campeonato de pilotos, desenhados como torre de tempos. Os dados vêm da Jolpica F1 API, buscados **no servidor** com cache de uma hora (ISR): a página segue estática e rápida, e o visitante nunca espera a API externa. Falhas na fonte viram um aviso, sem quebrar a página.
+- 🏎️ **Identidade de telemetria:** régua de luzes de largada, placar de letras avulsas, linhas de velocidade no herói, mapa de passagens nas experiências e barra de progresso de leitura. Toda animação pausa fora da tela e respeita `prefers-reduced-motion`.
 - ✅ **Validações:** validação em tempo real no cliente (React Hook Form) e revalidação no servidor com Zod, mensagens de erro traduzidas, contador de caracteres e feedback acessível via `aria-live`.
 - 🛡️ **Proteção anti-spam:** campo *honeypot* invisível e limite de 5 envios por IP a cada 10 minutos na API Route.
 - 🌓 **Tema claro/escuro:** alternância manual com persistência e respeito à preferência do sistema, sem piscar a tela no carregamento (script anti-FOUC).
@@ -619,6 +622,8 @@ npm run build      # build de produção (falha em qualquer erro de tipo)
 * 📖 **Envio de e-mail:** [Documentação do **Nodemailer**](https://nodemailer.com/about/)
 * 📖 **Animações:** [Documentação do **Motion**](https://motion.dev/docs)
 * 📖 **Componentes de interação:** [**React Bits**](https://reactbits.dev/) — código de terceiros sob licença MIT + Commons Clause, mantido como veio da origem em [`src/components/reactbits/`](./src/components/reactbits), com o aviso de copyright preservado
+* 📖 **Dados de corrida:** [**Jolpica F1 API**](https://github.com/jolpica/jolpica-f1), sucessora pública do Ergast, sem chave de acesso
+* 📖 **Logos das tecnologias:** [**Simple Icons**](https://simpleicons.org/), em domínio público (CC0), copiados para [`public/stack/`](./public/stack)
 * 📖 **Hospedagem:** [Documentação da **Vercel**](https://vercel.com/docs) · [**GitHub Pages**](https://docs.github.com/pages)
 * 📖 **Acessibilidade:** [**WAI-ARIA Authoring Practices**](https://www.w3.org/WAI/ARIA/apg/)
 * 📖 **Guia de Estilo:** [**Conventional Commits**](https://www.conventionalcommits.org/pt-br/v1.0.0/)

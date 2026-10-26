@@ -1,4 +1,5 @@
 import { AboutSection, Hero, SkillsSection } from "@/components/HomeSections";
+import { PitWall } from "@/components/PitWall";
 
 export default function HomePage() {
   return (
@@ -6,6 +7,7 @@ export default function HomePage() {
       <Hero />
       <AboutSection />
       <SkillsSection />
+      <PitWall />
     </>
   );
 }
