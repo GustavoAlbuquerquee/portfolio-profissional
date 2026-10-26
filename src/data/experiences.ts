@@ -134,7 +134,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "lits",
-    organization: "LITS — Live the Standard",
+    organization: "LITS - Live the Standard",
     role: { pt: "Full Stack Software Engineer", en: "Full Stack Software Engineer" },
     type: "job",
     start: "2026-05",

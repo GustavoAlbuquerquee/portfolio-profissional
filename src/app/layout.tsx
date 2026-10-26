@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   /* Base dos links absolutos (Open Graph e afins): o dominio proprio. */
   metadataBase: new URL("https://albuquerquee.dev"),
   title: {
-    default: `${profile.name} — ${profile.role.pt}`,
+    default: `${profile.name}, ${profile.role.pt}`,
     template: `%s · ${profile.name}`,
   },
   description: profile.headline.pt,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: `${profile.name} — ${profile.role.pt}`,
+    title: `${profile.name}, ${profile.role.pt}`,
     description: profile.headline.pt,
     locale: "pt_BR",
     alternateLocale: "en_US",

@@ -13,12 +13,12 @@ export function formatMonth(value: string, locale: Locale) {
   return `${name} ${year}`;
 }
 
-/** Intervalo "mar 2025 — jul 2025" ou "mar 2025 — atual". */
+/** Intervalo "mar 2025 - jul 2025" ou "mar 2025 - atual". */
 export function formatRange(start: string, end: string | null, locale: Locale) {
   const current = locale === "pt" ? "atual" : "present";
-  if (!end) return `${formatMonth(start, locale)} — ${current}`;
+  if (!end) return `${formatMonth(start, locale)} - ${current}`;
   if (end === start) return formatMonth(start, locale);
-  return `${formatMonth(start, locale)} — ${formatMonth(end, locale)}`;
+  return `${formatMonth(start, locale)} - ${formatMonth(end, locale)}`;
 }
 
 export function classNames(...values: (string | false | null | undefined)[]) {
