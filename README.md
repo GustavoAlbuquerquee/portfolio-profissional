@@ -92,7 +92,7 @@
 
 **O que o torna relevante.**
 - É **bilíngue de verdade**: cada texto existe em português e inglês e a troca é instantânea, sem recarregar a página, com a preferência salva no navegador.
-- O conteúdo é **totalmente orientado a dados** — adicionar um projeto é adicionar um objeto em um array tipado.
+- O conteúdo é **totalmente orientado a dados**: adicionar um projeto é adicionar um objeto em um array tipado.
 - Tem **back-end próprio**: o formulário não depende de serviços pagos de terceiros, usa uma API Route com Nodemailer, validação em duas camadas, *rate limit* e proteção *honeypot* contra bots.
 
 ---
