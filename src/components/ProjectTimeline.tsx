@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { ArrowDownUp, ArrowUpRight } from "lucide-react";
+import { ArrowDownUp, ArrowUpRight, Trophy } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { TechBadge } from "./TechBadge";
 import { Reveal } from "./Reveal";
@@ -105,6 +105,21 @@ export function ProjectTimeline() {
                         <p className="text-muted mt-0.5 font-mono text-[11px] tracking-wide uppercase">
                           {CATEGORY_LABELS[project.category][locale]}
                         </p>
+
+                        {/* Selo de podio: reconhecimento oficial do projeto. */}
+                        {project.award ? (
+                          <p className="border-accent bg-accent-soft mt-3 inline-flex max-w-full items-start gap-2.5 rounded-sm border px-3 py-2">
+                            <Trophy className="text-accent mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                            <span className="min-w-0">
+                              <span className="text-fg block text-xs font-semibold">
+                                {tr(project.award.title)}
+                              </span>
+                              <span className="text-muted block font-mono text-[11px] leading-snug">
+                                {tr(project.award.detail)}
+                              </span>
+                            </span>
+                          </p>
+                        ) : null}
 
                         <div className="mt-5 space-y-6">
                           {/* A captura se desfaz em pixels e revela a stack do projeto. */}

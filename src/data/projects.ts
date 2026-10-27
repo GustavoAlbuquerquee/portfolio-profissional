@@ -19,6 +19,8 @@ export type Project = {
   demo?: string;
   /** Imagem ou GIF do projeto em funcionamento (pasta /public/projects). */
   image: string;
+  /** Opcional: premio ou reconhecimento, exibido como selo abaixo do nome. */
+  award?: { title: Localized; detail: Localized };
 };
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -106,6 +108,13 @@ export const projects: Project[] = [
     technologies: ["HTML5", "CSS3", "JavaScript", "JSON Server", "Figma"],
     repository: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0427200-estagi-on",
     image: "/projects/estagi-on.jpg",
+    award: {
+      title: { pt: "Certificado de melhor projeto", en: "Best project award" },
+      detail: {
+        pt: "Trabalho Interdisciplinar: Desenvolvimento de Aplicação Web, 1º semestre de 2026",
+        en: "Interdisciplinary Project: Web Application Development, 1st semester of 2026",
+      },
+    },
   },
   {
     id: "yesagile",
