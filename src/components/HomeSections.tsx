@@ -134,11 +134,11 @@ export function Hero() {
         <dl className="border-line divide-line mt-14 grid border-t border-b sm:grid-cols-3 sm:divide-x">
           {profile.highlights.map((item, index) => (
             <div
-              key={item.value}
+              key={item.label.pt}
               className="border-line border-b py-6 last:border-b-0 sm:border-b-0 sm:px-6 sm:first:pl-0"
             >
               <dt>
-                <FlipStat value={item.value} delay={0.25 + index * 0.12} />
+                <FlipStat value={tr(item.value)} delay={0.25 + index * 0.12} />
               </dt>
               <dd className="text-muted mt-3 font-mono text-[11px] tracking-[0.12em] uppercase">
                 {tr(item.label)}

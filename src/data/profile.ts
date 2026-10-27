@@ -51,18 +51,18 @@ export const profile = {
   /** Cards de destaque da home. */
   highlights: [
     {
-      value: "2 anos",
+      value: { pt: "2 anos", en: "2 years" },
       label: { pt: "De experiência profissional", en: "Of professional experience" },
     },
     {
-      value: "5",
+      value: { pt: "5", en: "5" },
       label: { pt: "Empresas onde atuei", en: "Companies I have worked for" },
     },
     {
-      value: "PT / EN",
+      value: { pt: "PT / EN", en: "PT / EN" },
       label: { pt: "Idiomas de trabalho", en: "Working languages" },
     },
-  ] satisfies { value: string; label: Localized }[],
+  ] satisfies { value: Localized; label: Localized }[],
 
   /** Dados usados no rodape e nas paginas de contato. */
   education: {
