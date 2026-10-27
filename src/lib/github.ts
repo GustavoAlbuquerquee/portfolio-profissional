@@ -14,7 +14,7 @@
  * Tudo roda no servidor com cache de uma hora. Falha vira null.
  * ────────────────────────────────────────────────────────────────────────── */
 
-import { githubHiddenRepos, githubUser } from "@/data/profile";
+import { githubHiddenRepos, githubPrivateSources, githubUser } from "@/data/profile";
 
 const UMA_HORA = 3600;
 
@@ -41,15 +41,18 @@ type ApiCalendario = {
   total: Record<string, number>;
   contributions: { date: string; count: number; level: number }[];
 };
-export type CommitRecente = {
-  sha: string;
-  repositorio: string;
-  /** Primeira linha da mensagem. */
-  mensagem: string;
-  /** ISO 8601, data de autoria. */
-  data: string;
-  url: string;
-};
+/** `data` e ISO 8601, data de autoria. Commit privado chega sem mensagem nem link. */
+export type CommitRecente =
+  | {
+      id: string;
+      privado: false;
+      repositorio: string;
+      /** Primeira linha da mensagem. */
+      mensagem: string;
+      data: string;
+      url: string;
+    }
+  | { id: string; privado: true; rotulo: string; data: string };
 
 type ApiPerfil = { public_repos: number; followers: number; html_url: string };
 type ApiRepo = {
@@ -72,13 +75,15 @@ type ApiCommit = {
 const REPOS_NO_RADIO = 6;
 const COMMITS_POR_REPO = 4;
 const COMMITS_NO_RADIO = 12;
+/* Commits privados entram no maximo nesta quantidade, para nao tomarem a faixa. */
+const PRIVADOS_NO_RADIO = 4;
 
-function cabecalhosGitHub(): HeadersInit {
+function cabecalhosGitHub(token = process.env.GITHUB_TOKEN): HeadersInit {
   const cabecalhos: Record<string, string> = {
     Accept: "application/vnd.github+json",
     "User-Agent": "portfolio-albuquerquee",
   };
-  if (process.env.GITHUB_TOKEN) cabecalhos.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  if (token) cabecalhos.Authorization = `Bearer ${token}`;
   return cabecalhos;
 }
 
@@ -168,6 +173,69 @@ export async function buscarPainelGitHub(): Promise<PainelGitHub | null> {
 }
 
 export async function buscarCommitsRecentes(): Promise<CommitRecente[] | null> {
+  const [publicos, privados] = await Promise.all([
+    buscarCommitsPublicos(),
+    buscarCommitsPrivados(),
+  ]);
+  const commits = [...(publicos ?? []), ...privados.slice(0, PRIVADOS_NO_RADIO)]
+    .sort((a, b) => b.data.localeCompare(a.data))
+    .slice(0, COMMITS_NO_RADIO);
+  return commits.length ? commits : null;
+}
+
+/**
+ * Commits em organizacoes privadas (githubPrivateSources), lidos com
+ * GITHUB_PRIVATE_TOKEN. Daqui so saem rotulo e horario: mensagem, nome do
+ * repositorio, sha e link ficam no servidor. Sem token, nada aparece.
+ */
+async function buscarCommitsPrivados(): Promise<CommitRecente[]> {
+  const token = process.env.GITHUB_PRIVATE_TOKEN;
+  if (!token) return [];
+  const usuario = githubUser;
+
+  const porFonte = await Promise.allSettled(
+    githubPrivateSources.map(async (fonte) => {
+      const repos = await buscarJson<ApiRepo[]>(
+        `https://api.github.com/orgs/${fonte.owner}/repos?sort=pushed&per_page=${REPOS_NO_RADIO}`,
+        cabecalhosGitHub(token),
+      );
+      const porRepo = await Promise.allSettled(
+        repos.map((repo) =>
+          buscarJson<ApiCommit[]>(
+            `https://api.github.com/repos/${repo.full_name}/commits?author=${usuario}&per_page=${COMMITS_POR_REPO * 2}`,
+            cabecalhosGitHub(token),
+          ),
+        ),
+      );
+      return porRepo.flatMap((r) =>
+        r.status === "fulfilled"
+          ? r.value
+              .flatMap((c) =>
+                c.parents.length < 2 && c.commit.author
+                  ? [{ rotulo: fonte.label, data: c.commit.author.date }]
+                  : [],
+              )
+              .slice(0, COMMITS_POR_REPO)
+          : [],
+      );
+    }),
+  );
+
+  const falhas = porFonte.filter((r) => r.status === "rejected");
+  if (falhas.length) console.error("[github] falha nos commits privados:", falhas);
+
+  return porFonte
+    .flatMap((r) => (r.status === "fulfilled" ? r.value : []))
+    .sort((a, b) => b.data.localeCompare(a.data))
+    .map<CommitRecente>((c, i) => ({
+      id: `privado-${i}`,
+      privado: true,
+      rotulo: c.rotulo,
+      data: c.data,
+    }));
+}
+
+async function buscarCommitsPublicos(): Promise<CommitRecente[] | null> {
   const usuario = githubUser;
   try {
     // Mesma URL da telemetria: o cache do fetch serve as duas secoes.
@@ -192,7 +260,8 @@ export async function buscarCommitsRecentes(): Promise<CommitRecente[] | null> {
             c.parents.length < 2 && c.commit.author
               ? [
                   {
-                    sha: c.sha,
+                    id: c.sha,
+                    privado: false,
                     repositorio: repo.name,
                     mensagem: c.commit.message.split("\n")[0].trim(),
                     data: c.commit.author.date,
@@ -205,12 +274,7 @@ export async function buscarCommitsRecentes(): Promise<CommitRecente[] | null> {
       }),
     );
 
-    const commits = porRepo
-      .flatMap((r) => (r.status === "fulfilled" ? r.value : []))
-      .sort((a, b) => b.data.localeCompare(a.data))
-      .slice(0, COMMITS_NO_RADIO);
-
-    return commits.length ? commits : null;
+    return porRepo.flatMap((r) => (r.status === "fulfilled" ? r.value : []));
   } catch (erro) {
     console.error("[github] falha ao buscar commits:", erro);
     return null;

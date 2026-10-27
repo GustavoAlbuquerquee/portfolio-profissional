@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
+import { Lock, Pause, Play } from "lucide-react";
 import { useI18n } from "@/context/I18nProvider";
 import type { CommitRecente } from "@/lib/github";
 
@@ -67,9 +67,31 @@ export function CommitTickerView({ commits }: { commits: CommitRecente[] }) {
 
   const itens = (copia: boolean) =>
     commits.map((commit) => {
+      /* Commit privado: so horario e rotulo, sem link nem mensagem. */
+      if (commit.privado) {
+        return (
+          <li key={commit.id} className="flex shrink-0">
+            <span className="flex items-center gap-3 px-5 py-3 font-mono text-xs">
+              <span className="bg-accent h-2 w-2 shrink-0 rounded-[2px]" aria-hidden />
+              <time dateTime={commit.data} className="text-muted tabular shrink-0 uppercase">
+                {quando(commit.data)}
+              </time>
+              <span className="text-fg shrink-0 font-semibold">{commit.rotulo}</span>
+              <span className="text-muted" aria-hidden>
+                ·
+              </span>
+              <span className="text-muted flex shrink-0 items-center gap-1.5">
+                <Lock className="h-3 w-3" aria-hidden />
+                {t.radio.private}
+              </span>
+            </span>
+          </li>
+        );
+      }
+
       const [tipo, resumo] = separarTipo(commit.mensagem);
       return (
-        <li key={commit.sha} className="flex shrink-0">
+        <li key={commit.id} className="flex shrink-0">
           <a
             href={commit.url}
             target="_blank"

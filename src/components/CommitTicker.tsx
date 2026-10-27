@@ -8,6 +8,5 @@ import { CommitTickerView } from "./CommitTickerView";
  */
 export async function CommitTicker() {
   const commits = await buscarCommitsRecentes();
-  if (!commits) return null;
-  return <CommitTickerView commits={commits} />;
+  if (!commits) return null;  return <CommitTickerView commits={commits} />;
 }

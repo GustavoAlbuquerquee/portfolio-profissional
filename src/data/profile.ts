@@ -142,3 +142,11 @@ export const githubUser = "GustavoAlbuquerquee";
 
 /** Repositorios que ficam fora do radio de commits da home (nome exato no GitHub). */
 export const githubHiddenRepos: string[] = ["sofia-cumple"];
+
+/**
+ * Organizacoes privadas cujos commits entram no radio so como horario e
+ * rotulo ("LITS · commit privado"). Exige GITHUB_PRIVATE_TOKEN na Vercel.
+ */
+export const githubPrivateSources: { owner: string; label: string }[] = [
+  { owner: "LITS-Social", label: "LITS" },
+];

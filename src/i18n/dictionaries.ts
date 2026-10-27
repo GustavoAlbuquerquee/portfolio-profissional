@@ -171,6 +171,7 @@ export const dictionaries = {
       short: "Rádio",
       aria: "Últimos commits no GitHub",
       pause: "Pausar os commits",
+      private: "commit privado",
     },
     notFound: {
       title: "Página não encontrada",
@@ -343,6 +344,7 @@ export const dictionaries = {
       short: "Radio",
       aria: "Latest commits on GitHub",
       pause: "Pause the commits",
+      private: "private commit",
     },
     notFound: {
       title: "Page not found",
