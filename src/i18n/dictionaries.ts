@@ -166,6 +166,12 @@ export const dictionaries = {
       wakaTotal: "Programando",
       wakaDaily: "Média por dia",
     },
+    radio: {
+      label: "Rádio do box",
+      short: "Rádio",
+      aria: "Últimos commits no GitHub",
+      pause: "Pausar os commits",
+    },
     notFound: {
       title: "Página não encontrada",
       description: "O endereço que você tentou acessar não existe neste portfólio.",
@@ -331,6 +337,12 @@ export const dictionaries = {
       wakaTitle: "Last 7 days in the editor",
       wakaTotal: "Coding",
       wakaDaily: "Daily average",
+    },
+    radio: {
+      label: "Team radio",
+      short: "Radio",
+      aria: "Latest commits on GitHub",
+      pause: "Pause the commits",
     },
     notFound: {
       title: "Page not found",

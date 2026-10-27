@@ -202,11 +202,88 @@ html[data-arcade="on"] body::after {
   }
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+ * Radio do box: a faixa de commits abaixo do heroi. O trilho tem dois grupos
+ * iguais e anda meia largura (um grupo) por volta, entao o laco nao tem
+ * emenda. A duracao vem do componente, medida para a velocidade ser constante.
+ * ────────────────────────────────────────────────────────────────────────── */
+.radio-trilho {
+  animation: radio-rolar 120s linear infinite;
+}
+
+.radio-trilho[data-pausado],
+.radio-janela:focus-within .radio-trilho {
+  animation-play-state: paused;
+}
+
+/* Hover so pausa com mouse: no toque, o hover gruda depois de tocar. */
+@media (hover: hover) and (pointer: fine) {
+  .radio-janela:hover .radio-trilho {
+    animation-play-state: paused;
+  }
+}
+
+/* As pontas somem em degrade, como letreiro entrando e saindo da tela. */
+.radio-janela {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 1.5rem,
+    #000 calc(100% - 1.5rem),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 1.5rem,
+    #000 calc(100% - 1.5rem),
+    transparent
+  );
+}
+
+@keyframes radio-rolar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ponto de "no ar" ao lado do rotulo. */
+.radio-pulso {
+  animation: radio-pulsar 1.6s ease-in-out infinite;
+}
+
+@keyframes radio-pulsar {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Sem movimento, a faixa vira rolagem manual, sem a copia e sem o pulso. */
+@media (prefers-reduced-motion: reduce) {
+  .radio-trilho,
+  .radio-pulso {
+    animation: none;
+  }
+
+  .radio-janela {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .radio-copia {
+    display: none;
+  }
+}
+
+/* Uma volta so: com duracao quase zero e repeticao infinita, a animacao
+   pularia de fase a cada quadro e piscaria em vez de parar. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }

@@ -139,3 +139,6 @@ export const socials: SocialLink[] = [
 ];
 
 export const githubUser = "GustavoAlbuquerquee";
+
+/** Repositorios que ficam fora do radio de commits da home (nome exato no GitHub). */
+export const githubHiddenRepos: string[] = ["sofia-cumple"];

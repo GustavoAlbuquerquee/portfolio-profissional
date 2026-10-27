@@ -7,10 +7,14 @@
  * - Perfil e repositorios: API REST do GitHub. GITHUB_TOKEN e opcional;
  *   sem ele o limite e de 60 requisicoes por hora, o que basta com o cache.
  *
+ * - Radio de commits: os ultimos commits dos repositorios com push mais
+ *   recente. A API de eventos parou de mandar as mensagens dos pushes, entao
+ *   as mensagens vem da lista de commits de cada repositorio.
+ *
  * Tudo roda no servidor com cache de uma hora. Falha vira null.
  * ────────────────────────────────────────────────────────────────────────── */
 
-import { githubUser } from "@/data/profile";
+import { githubHiddenRepos, githubUser } from "@/data/profile";
 
 const UMA_HORA = 3600;
 
@@ -37,8 +41,37 @@ type ApiCalendario = {
   total: Record<string, number>;
   contributions: { date: string; count: number; level: number }[];
 };
+export type CommitRecente = {
+  sha: string;
+  repositorio: string;
+  /** Primeira linha da mensagem. */
+  mensagem: string;
+  /** ISO 8601, data de autoria. */
+  data: string;
+  url: string;
+};
+
 type ApiPerfil = { public_repos: number; followers: number; html_url: string };
-type ApiRepo = { fork: boolean; language: string | null; stargazers_count: number };
+type ApiRepo = {
+  name: string;
+  full_name: string;
+  fork: boolean;
+  language: string | null;
+  stargazers_count: number;
+};
+type ApiCommit = {
+  sha: string;
+  html_url: string;
+  parents: { sha: string }[];
+  commit: { message: string; author: { date: string } | null };
+};
+
+/* Radio de commits: quantos repositorios consultar, quantos commits pegar de
+   cada um (assim um repositorio muito ativo nao ocupa a faixa toda) e quantos
+   entram na faixa. */
+const REPOS_NO_RADIO = 6;
+const COMMITS_POR_REPO = 4;
+const COMMITS_NO_RADIO = 12;
 
 function cabecalhosGitHub(): HeadersInit {
   const cabecalhos: Record<string, string> = {
@@ -130,6 +163,56 @@ export async function buscarPainelGitHub(): Promise<PainelGitHub | null> {
     };
   } catch (erro) {
     console.error("[github] falha ao buscar dados:", erro);
+    return null;
+  }
+}
+
+export async function buscarCommitsRecentes(): Promise<CommitRecente[] | null> {
+  const usuario = githubUser;
+  try {
+    // Mesma URL da telemetria: o cache do fetch serve as duas secoes.
+    const repos = await buscarJson<ApiRepo[]>(
+      `https://api.github.com/users/${usuario}/repos?per_page=100&sort=pushed`,
+      cabecalhosGitHub(),
+    );
+    const recentes = repos
+      .filter((r) => !r.fork && !githubHiddenRepos.includes(r.name))
+      .slice(0, REPOS_NO_RADIO);
+
+    /* Repositorio vazio responde 409: ele fica sem commits, sem derrubar os outros.
+       Pede alguns a mais porque os merges saem da lista. */
+    const porRepo = await Promise.allSettled(
+      recentes.map(async (repo) => {
+        const commits = await buscarJson<ApiCommit[]>(
+          `https://api.github.com/repos/${repo.full_name}/commits?author=${usuario}&per_page=${COMMITS_POR_REPO * 2}`,
+          cabecalhosGitHub(),
+        );
+        return commits
+          .flatMap<CommitRecente>((c) =>
+            c.parents.length < 2 && c.commit.author
+              ? [
+                  {
+                    sha: c.sha,
+                    repositorio: repo.name,
+                    mensagem: c.commit.message.split("\n")[0].trim(),
+                    data: c.commit.author.date,
+                    url: c.html_url,
+                  },
+                ]
+              : [],
+          )
+          .slice(0, COMMITS_POR_REPO);
+      }),
+    );
+
+    const commits = porRepo
+      .flatMap((r) => (r.status === "fulfilled" ? r.value : []))
+      .sort((a, b) => b.data.localeCompare(a.data))
+      .slice(0, COMMITS_NO_RADIO);
+
+    return commits.length ? commits : null;
+  } catch (erro) {
+    console.error("[github] falha ao buscar commits:", erro);
     return null;
   }
 }
